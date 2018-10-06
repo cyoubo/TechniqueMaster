@@ -30,3 +30,18 @@
 *.exe
 *.out
 *.app
+*.pdb
+
+# Debug Path
+\obj
+TechniqueMaster.exe.config
+TechniqueMaster.vshost.exe.config
+TechniqueMaster.vshost.exe.manifest
+!\Debug\*.dll
+
+# Log File
+*.log
+!TechniqueMaster.log
+
+Properties/licenses.licx
+Properties/licenses.licx
