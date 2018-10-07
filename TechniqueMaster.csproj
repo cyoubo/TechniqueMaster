@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8B764F6-CD7D-4CAF-A8DE-8C55BF2D261A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TechniqueMaster</RootNamespace>
+    <AssemblyName>TechniqueMaster</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=17.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Moon.Orm, Version=6.2.5819.29278, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Moon.Orm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module_System\View\Form\Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_System\View\Form\Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_System\Model\GParam.cs" />
+    <Compile Include="Module_System\Model\UIMediator.cs" />
+    <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.designer.cs">
+      <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueEvaluationAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueRegisterAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Enum\TechniqueEnums.cs" />
+    <Compile Include="Module_Technique\Componet\Enum\TechniqueStatusEnum.cs" />
+    <Compile Include="Module_Technique\Componet\Strategy\MeanStrategy.cs" />
+    <Compile Include="Module_Technique\Componet\Strategy\TechniqueEvalutor.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueCatalogController.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueController.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueEvaluationController.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueRegisterController.cs" />
+    <Compile Include="Module_Technique\Model\TB_Technique.cs" />
+    <Compile Include="Module_Technique\Model\TB_TechniqueCatalog.cs" />
+    <Compile Include="Module_Technique\Model\TB_TechniqueEvaluation.cs" />
+    <Compile Include="Module_Technique\Model\TB_TechniqueRegister.cs" />
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.Designer.cs">
+      <DependentUpon>UC_TechniqueEvaluate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.Designer.cs">
+      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
+      <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_System\View\Form\Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.resx">
+      <DependentUpon>UC_TechniqueEvaluate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.resx">
+      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
+      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
+      <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
+      <Name>PS.Plot.FrameBasic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module_System\Componet\Adapter\" />
+    <Folder Include="Module_System\Controller\" />
+    <Folder Include="Module_System\View\UControl\" />
+    <Folder Include="Module_Technique\Manager\" />
+    <Folder Include="Module_Technique\View\Form\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
