@@ -91,7 +91,10 @@
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueEvaluationAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueLogAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueMissionAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueRegisterAdapter.cs" />
+    <Compile Include="Module_Technique\Componet\Enum\MissionStatusEnum.cs" />
     <Compile Include="Module_Technique\Componet\Enum\TechniqueEnums.cs" />
     <Compile Include="Module_Technique\Componet\Enum\TechniqueStatusEnum.cs" />
     <Compile Include="Module_Technique\Componet\Strategy\MeanStrategy.cs" />
@@ -99,7 +102,11 @@
     <Compile Include="Module_Technique\Controller\TechniqueCatalogController.cs" />
     <Compile Include="Module_Technique\Controller\TechniqueController.cs" />
     <Compile Include="Module_Technique\Controller\TechniqueEvaluationController.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueLogController.cs" />
+    <Compile Include="Module_Technique\Controller\TechniqueMisssionController.cs" />
     <Compile Include="Module_Technique\Controller\TechniqueRegisterController.cs" />
+    <Compile Include="Module_Technique\Model\TB_TechniqueLog.cs" />
+    <Compile Include="Module_Technique\Model\TB_TechniqueMission.cs" />
     <Compile Include="Module_Technique\Model\TB_Technique.cs" />
     <Compile Include="Module_Technique\Model\TB_TechniqueCatalog.cs" />
     <Compile Include="Module_Technique\Model\TB_TechniqueEvaluation.cs" />
@@ -115,6 +122,18 @@
     </Compile>
     <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.Designer.cs">
       <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueMission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueMission.Designer.cs">
+      <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.cs">
       <SubType>UserControl</SubType>
@@ -135,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.resx">
       <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueLogEdit.resx">
+      <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueMission.resx">
+      <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
@@ -163,17 +188,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
-      <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
-      <Name>PS.Plot.FrameBasic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Module_System\Componet\Adapter\" />
     <Folder Include="Module_System\Controller\" />
     <Folder Include="Module_System\View\UControl\" />
     <Folder Include="Module_Technique\Manager\" />
     <Folder Include="Module_Technique\View\Form\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
+      <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
+      <Name>PS.Plot.FrameBasic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

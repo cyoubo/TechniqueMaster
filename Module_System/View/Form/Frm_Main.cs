@@ -57,5 +57,11 @@ namespace TechniqueMaster
             UC_TechniqueScan uc = new UC_TechniqueScan();
             tabhelper.AddorShowTabPage(barBtn_TechniqueEdit.Caption, uc);
         }
+
+        private void barBtn_TechniqueMission_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueMission uc = new UC_TechniqueMission();
+            tabhelper.AddorShowTabPage(barBtn_TechniqueMission.Caption, uc);
+        }
     }
 }
