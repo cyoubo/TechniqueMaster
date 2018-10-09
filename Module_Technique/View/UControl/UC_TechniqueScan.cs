@@ -78,15 +78,15 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 
             EnumUtils utils = new EnumUtils();
             controller_Evaluate.LoadEntryByTechniqueID(controller_tech.CurrentID);
-            //this.tv_job.Text = utils.GetEnumdescriptionByValue(typeof(JobRelation), (int)controller_Evaluate.Entry.JobRelation);
-            //this.tv_industry.Text = utils.GetEnumdescriptionByValue(typeof(IndustryRelation), (int)controller_Evaluate.Entry.IndustryRelation);
-            //this.tv_target.Text = utils.GetEnumdescriptionByValue(typeof(TargetDefinition), (int)controller_Evaluate.Entry.TargetDefinition);
-            //this.tv_techcatalog.Text = utils.GetEnumdescriptionByValue(typeof(TechniqueCalatog), (int)controller_Evaluate.Entry.Technique);
-            //this.tv_size.Text = utils.GetEnumdescriptionByValue(typeof(SystemSize), (int)controller_Evaluate.Entry.SystemSize);
-            //this.tv_ecology.Text = utils.GetEnumdescriptionByValue(typeof(ResourceEcology), (int)controller_Evaluate.Entry.ResourceEcology);
-            //this.tv_reserve.Text = utils.GetEnumdescriptionByValue(typeof(KnowledgeReserve), (int)controller_Evaluate.Entry.KnowledgeReserve);
-            //this.tv_learnmethod.Text = utils.GetEnumdescriptionByValue(typeof(LearnMethod), (int)controller_Evaluate.Entry.LearnMethod);
-            //this.tv_dirs.Text = utils.GetEnumdescriptionByValue(typeof(Dispersion), (int)controller_Evaluate.Entry.Dispersion);
+            this.tv_job.Text = utils.GetEnumdescriptionByValue(typeof(JobRelation), (int)controller_Evaluate.Entry.JobRelation);
+            this.tv_industry.Text = utils.GetEnumdescriptionByValue(typeof(IndustryRelation), (int)controller_Evaluate.Entry.IndustryRelation);
+            this.tv_target.Text = utils.GetEnumdescriptionByValue(typeof(TargetDefinition), (int)controller_Evaluate.Entry.TargetDefinition);
+            this.tv_techcatalog.Text = utils.GetEnumdescriptionByValue(typeof(TechniqueCalatog), (int)controller_Evaluate.Entry.Technique);
+            this.tv_size.Text = utils.GetEnumdescriptionByValue(typeof(SystemSize), (int)controller_Evaluate.Entry.SystemSize);
+            this.tv_ecology.Text = utils.GetEnumdescriptionByValue(typeof(ResourceEcology), (int)controller_Evaluate.Entry.ResourceEcology);
+            this.tv_reserve.Text = utils.GetEnumdescriptionByValue(typeof(KnowledgeReserve), (int)controller_Evaluate.Entry.KnowledgeReserve);
+            this.tv_learnmethod.Text = utils.GetEnumdescriptionByValue(typeof(LearnMethod), (int)controller_Evaluate.Entry.LearnMethod);
+            this.tv_dirs.Text = utils.GetEnumdescriptionByValue(typeof(Dispersion), (int)controller_Evaluate.Entry.Dispersion);
 
             TechniqueEvalutor evaluator = new TechniqueEvalutor();
             evaluator.CreateStrategy(controller_Evaluate.Entry.EvaluationMethod);

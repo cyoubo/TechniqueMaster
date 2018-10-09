@@ -37,7 +37,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 
         public void onInitialUI()
         {
-            throw new NotImplementedException();
+            this.calendar_DataPicker.DateTime = DateTime.Now.Date;
+
         }
 
         private void UC_TechniqueLogEdit_Load(object sender, EventArgs e)
