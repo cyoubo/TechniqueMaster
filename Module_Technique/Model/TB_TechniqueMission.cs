@@ -74,6 +74,11 @@ namespace TechniqueMaster.Module_Technique.Model
             get { return GetPropertyValue<String>("Status"); }
             set { SetPropertyValue("Status", value); }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     [Table("[TB_TechniqueMission]", DbType.Sqlite)]

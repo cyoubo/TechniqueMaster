@@ -50,6 +50,8 @@
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).BeginInit();
@@ -73,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -134,6 +138,9 @@
             this.gridControl_Misssion.Location = new System.Drawing.Point(37, 520);
             this.gridControl_Misssion.MainView = this.gridView_Misssion;
             this.gridControl_Misssion.Name = "gridControl_Misssion";
+            this.gridControl_Misssion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repo_HLE_Delete,
+            this.repo_HLE_Edit});
             this.gridControl_Misssion.Size = new System.Drawing.Size(1180, 155);
             this.gridControl_Misssion.TabIndex = 8;
             this.gridControl_Misssion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -170,7 +177,6 @@
             this.cmb_Mission.Size = new System.Drawing.Size(192, 28);
             this.cmb_Mission.StyleController = this.layoutControl1;
             this.cmb_Mission.TabIndex = 5;
-            this.cmb_Mission.SelectedIndexChanged += new System.EventHandler(this.cmb_Mission_SelectedIndexChanged);
             // 
             // cmb_Tech
             // 
@@ -297,6 +303,18 @@
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(152, 22);
             // 
+            // repo_HLE_Delete
+            // 
+            this.repo_HLE_Delete.AutoHeight = false;
+            this.repo_HLE_Delete.Name = "repo_HLE_Delete";
+            this.repo_HLE_Delete.Click += new System.EventHandler(this.repo_HLE_Delete_Click);
+            // 
+            // repo_HLE_Edit
+            // 
+            this.repo_HLE_Edit.AutoHeight = false;
+            this.repo_HLE_Edit.Name = "repo_HLE_Edit";
+            this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
+            // 
             // UC_TechniqueLogEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -328,6 +346,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +376,8 @@
         private DevExpress.XtraEditors.DateEdit dateE_Date;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_Delete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_Edit;
 
     }
 }

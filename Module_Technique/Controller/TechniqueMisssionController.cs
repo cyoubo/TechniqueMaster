@@ -1,4 +1,5 @@
 ﻿using Moon.Orm;
+using PS.Plot.FrameBasic.Module_Common.Utils;
 using PS.Plot.FrameBasic.Module_SupportLibs.MoonORM.Controller;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechniqueMaster.Module_System.Model;
+using TechniqueMaster.Module_Technique.Componet.Enum;
 using TechniqueMaster.Module_Technique.Model;
 
 namespace TechniqueMaster.Module_Technique.Controller
@@ -40,14 +42,20 @@ namespace TechniqueMaster.Module_Technique.Controller
 
         public IList<TB_TechniqueMission> QueryEntriesByTechniquID(long TechniqueID)
         {
-            using (var db = this.dbFactory.OpenDefalutDataBase())
-            {
-                MQLBase mql = TB_TechniqueMissionSet.SelectAll().Where(TB_TechniqueMissionSet.TechniqueID.Equal(TechniqueID));
-                IList<TB_TechniqueMission> result = db.GetEntities<TB_TechniqueMission>(mql);
-                if (result == null)
-                    result = new List<TB_TechniqueMission>();
-                return result;
-            }
+            MQLBase mql = TB_TechniqueMissionSet.SelectAll().Where(TB_TechniqueMissionSet.TechniqueID.Equal(TechniqueID));
+            return TravelEntitiesByWhereCaluse(mql);
+        }
+
+        public IList<TB_TechniqueMission> QueryEntriesByTechniquIDWithUnFinishState(long TechniqueID)
+        {
+            string FinishStr = new EnumUtils().GetEnumdescription(MissionStatusEnum.Finish);
+            WhereExpression ex = TB_TechniqueMissionSet.TechniqueID.Equal(TechniqueID).And(TB_TechniqueMissionSet.Status.NotEqual(FinishStr));
+            return TravelEntitiesByWhereCaluse(TB_TechniqueMissionSet.SelectAll().Where(ex));
+        }
+
+        internal static long ExtractID(object p)
+        {
+            return (p as TB_TechniqueMission).ID;
         }
     }
 }

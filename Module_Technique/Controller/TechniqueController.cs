@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechniqueMaster.Module_System.Model;
+using Moon.Orm;
+using PS.Plot.FrameBasic.Module_Common.Utils;
+using TechniqueMaster.Module_Technique.Componet.Enum;
 
 namespace TechniqueMaster.Module_Technique.Controller
 {
@@ -46,6 +49,25 @@ namespace TechniqueMaster.Module_Technique.Controller
         public static long ExtractID(object p)
         {
             return (p as TB_Technique).ID;
+        }
+
+        public IList<TB_Technique> TravleUnFinishEntities()
+        {
+            EnumUtils utils = new EnumUtils();
+            string createStr = utils.GetEnumdescription(TechniqueStatusEnum.Create);
+            string doingStr = utils.GetEnumdescription(TechniqueStatusEnum.Start);
+            MQLBase mql = TB_TechniqueSet.SelectAll();
+            WhereExpression expression = TB_TechniqueSet.Status.Equal(createStr).Or(TB_TechniqueSet.Status.Equal(doingStr));
+            mql.Where(expression);
+            return TravelEntitiesByWhereCaluse(mql);
+        }
+
+        public bool ShiftTechStatus(long targetID, TechniqueStatusEnum techniqueStatusEnum)
+        {
+            TB_Technique tech = QueryEntryByID((int)targetID);
+            tech.Status = new EnumUtils().GetEnumdescription(techniqueStatusEnum);
+            tech.WhereExpression = TB_TechniqueSet.ID.Equal(targetID);
+            return UpdateEntryByID(tech);
         }
     }
 }
