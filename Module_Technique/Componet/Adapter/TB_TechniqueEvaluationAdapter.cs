@@ -11,17 +11,17 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
     public class TB_TechniqueEvaluationBuilder : BaseDataTableBuilder
     {
         public readonly string ID = "ID";
-        public readonly string TechniqueID = "TechniqueID";
-        public readonly string JobRelation = "JobRelation";
-        public readonly string IndustryRelation = "IndustryRelation";
-        public readonly string TargetDefinition = "TargetDefinition";
-        public readonly string Technique = "Technique";
-        public readonly string SystemSize = "SystemSize";
-        public readonly string KnowledgeReserve = "KnowledgeReserve";
-        public readonly string ResourceEcology = "ResourceEcology";
-        public readonly string LearnMethod = "LearnMethod";
-        public readonly string Dispersion = "Dispersion";
-        public readonly string SummaryScope = "SummaryScope";
+        public readonly string TechniqueID = "技术编号";
+        public readonly string JobRelation = "工作相关性";
+        public readonly string IndustryRelation = "行业相关性";
+        public readonly string TargetDefinition = "目标明确性";
+        public readonly string Technique = "应用类别";
+        public readonly string SystemSize = "体系尺寸";
+        public readonly string KnowledgeReserve = "知识储备";
+        public readonly string ResourceEcology = "资源生态";
+        public readonly string LearnMethod = "学习方式";
+        public readonly string Dispersion = "时间离散度";
+        public readonly string SummaryScope = "总计得分";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
         protected override void AddDataColumn()

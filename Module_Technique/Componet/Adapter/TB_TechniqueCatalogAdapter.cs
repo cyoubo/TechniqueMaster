@@ -11,8 +11,8 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
     public class TB_TechniqueCatalogBuilder : BaseDataTableBuilder
     {
         public readonly string ID = "ID";
-        public readonly string Name = "Name";
-        public readonly string Description = "Description";
+        public readonly string Name = "名称";
+        public readonly string Description = "描述";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
         protected override void AddDataColumn()

@@ -53,9 +53,24 @@ namespace TechniqueMaster.Module_Technique.Controller
             return TravelEntitiesByWhereCaluse(TB_TechniqueMissionSet.SelectAll().Where(ex));
         }
 
+
+
         internal static long ExtractID(object p)
         {
             return (p as TB_TechniqueMission).ID;
+        }
+
+        public bool ShiftMissionStatus(long targetID, MissionStatusEnum missionStatusEnum, DateTime date)
+        {
+            TB_TechniqueMission tech = QueryEntryByID((int)targetID);
+            tech.WhereExpression = TB_TechniqueMissionSet.ID.Equal(targetID);
+            tech.Status = new EnumUtils().GetEnumdescription(missionStatusEnum);
+            if (missionStatusEnum == MissionStatusEnum.Finish)
+            {
+                if (string.IsNullOrEmpty(tech.FinishDate))
+                    tech.FinishDate = FormatDate(date);
+            }
+            return UpdateEntryByID(tech);
         }
     }
 }

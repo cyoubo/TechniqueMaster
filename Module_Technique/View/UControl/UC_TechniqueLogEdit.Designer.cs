@@ -34,6 +34,8 @@
             this.btn_sure = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_Misssion = new DevExpress.XtraGrid.GridControl();
             this.gridView_Misssion = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.tv_Context = new DevExpress.XtraEditors.MemoEdit();
             this.tv_URL = new DevExpress.XtraEditors.TextEdit();
             this.cmb_Mission = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -50,8 +52,6 @@
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).BeginInit();
@@ -59,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.calendar_DataPicker.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Misssion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Misssion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tv_Context.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tv_URL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Mission.Properties)).BeginInit();
@@ -75,8 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -100,13 +100,13 @@
             // dateE_Date
             // 
             this.dateE_Date.EditValue = null;
-            this.dateE_Date.Location = new System.Drawing.Point(194, 459);
+            this.dateE_Date.Location = new System.Drawing.Point(132, 459);
             this.dateE_Date.Name = "dateE_Date";
             this.dateE_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateE_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateE_Date.Size = new System.Drawing.Size(1023, 28);
+            this.dateE_Date.Size = new System.Drawing.Size(1085, 28);
             this.dateE_Date.StyleController = this.layoutControl1;
             this.dateE_Date.TabIndex = 11;
             this.dateE_Date.EditValueChanged += new System.EventHandler(this.dateE_Date_EditValueChanged);
@@ -152,6 +152,18 @@
             this.gridView_Misssion.Name = "gridView_Misssion";
             this.gridView_Misssion.OptionsView.ShowGroupPanel = false;
             // 
+            // repo_HLE_Delete
+            // 
+            this.repo_HLE_Delete.AutoHeight = false;
+            this.repo_HLE_Delete.Name = "repo_HLE_Delete";
+            this.repo_HLE_Delete.Click += new System.EventHandler(this.repo_HLE_Delete_Click);
+            // 
+            // repo_HLE_Edit
+            // 
+            this.repo_HLE_Edit.AutoHeight = false;
+            this.repo_HLE_Edit.Name = "repo_HLE_Edit";
+            this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
+            // 
             // tv_Context
             // 
             this.tv_Context.Location = new System.Drawing.Point(453, 162);
@@ -162,29 +174,29 @@
             // 
             // tv_URL
             // 
-            this.tv_URL.Location = new System.Drawing.Point(610, 101);
+            this.tv_URL.Location = new System.Drawing.Point(548, 101);
             this.tv_URL.Name = "tv_URL";
-            this.tv_URL.Size = new System.Drawing.Size(607, 28);
+            this.tv_URL.Size = new System.Drawing.Size(669, 28);
             this.tv_URL.StyleController = this.layoutControl1;
             this.tv_URL.TabIndex = 6;
             // 
             // cmb_Mission
             // 
-            this.cmb_Mission.Location = new System.Drawing.Point(1025, 67);
+            this.cmb_Mission.Location = new System.Drawing.Point(963, 67);
             this.cmb_Mission.Name = "cmb_Mission";
             this.cmb_Mission.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Mission.Size = new System.Drawing.Size(192, 28);
+            this.cmb_Mission.Size = new System.Drawing.Size(254, 28);
             this.cmb_Mission.StyleController = this.layoutControl1;
             this.cmb_Mission.TabIndex = 5;
             // 
             // cmb_Tech
             // 
-            this.cmb_Tech.Location = new System.Drawing.Point(610, 67);
+            this.cmb_Tech.Location = new System.Drawing.Point(548, 67);
             this.cmb_Tech.Name = "cmb_Tech";
             this.cmb_Tech.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Tech.Size = new System.Drawing.Size(252, 28);
+            this.cmb_Tech.Size = new System.Drawing.Size(314, 28);
             this.cmb_Tech.StyleController = this.layoutControl1;
             this.cmb_Tech.TabIndex = 4;
             this.cmb_Tech.SelectedIndexChanged += new System.EventHandler(this.cmb_Tech_SelectedIndexChanged);
@@ -216,15 +228,16 @@
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 5;
             this.layoutControlGroup2.Size = new System.Drawing.Size(1224, 392);
+            this.layoutControlGroup2.Text = "日志登记";
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tv_Context;
             this.layoutControlItem4.Location = new System.Drawing.Point(416, 68);
-            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Name = "日志内容";
             this.layoutControlItem4.Size = new System.Drawing.Size(770, 218);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem6
             // 
@@ -247,25 +260,25 @@
             // 
             this.layoutControlItem1.Control = this.cmb_Tech;
             this.layoutControlItem1.Location = new System.Drawing.Point(416, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Name = "所属技术";
             this.layoutControlItem1.Size = new System.Drawing.Size(415, 34);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cmb_Mission;
             this.layoutControlItem2.Location = new System.Drawing.Point(831, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Name = "所属任务";
             this.layoutControlItem2.Size = new System.Drawing.Size(355, 34);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tv_URL;
             this.layoutControlItem3.Location = new System.Drawing.Point(416, 34);
-            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Name = "云笔记链接";
             this.layoutControlItem3.Size = new System.Drawing.Size(770, 34);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem7
             // 
@@ -285,35 +298,24 @@
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 5;
             this.layoutControlGroup3.Size = new System.Drawing.Size(1224, 290);
+            this.layoutControlGroup3.Text = "日志浏览";
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.dateE_Date;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Name = "日志日期";
             this.layoutControlItem8.Size = new System.Drawing.Size(1186, 34);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.gridControl_Misssion;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 34);
-            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Name = "日志列表";
             this.layoutControlItem5.Size = new System.Drawing.Size(1186, 188);
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(152, 22);
-            // 
-            // repo_HLE_Delete
-            // 
-            this.repo_HLE_Delete.AutoHeight = false;
-            this.repo_HLE_Delete.Name = "repo_HLE_Delete";
-            this.repo_HLE_Delete.Click += new System.EventHandler(this.repo_HLE_Delete_Click);
-            // 
-            // repo_HLE_Edit
-            // 
-            this.repo_HLE_Edit.AutoHeight = false;
-            this.repo_HLE_Edit.Name = "repo_HLE_Edit";
-            this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(90, 22);
             // 
             // UC_TechniqueLogEdit
             // 
@@ -330,6 +332,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.calendar_DataPicker.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Misssion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Misssion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tv_Context.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tv_URL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Mission.Properties)).EndInit();
@@ -346,8 +350,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
             this.ResumeLayout(false);
 
         }

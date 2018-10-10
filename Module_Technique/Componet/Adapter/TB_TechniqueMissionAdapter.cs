@@ -11,12 +11,12 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
     public class TB_TechniqueMissionBuilder : BaseDataTableBuilder
     {
         public readonly string ID = "ID";
-        public readonly string TechniqueID = "TechniqueID";
-        public readonly string Name = "Name";
-        public readonly string Description = "Description";
-        public readonly string CreateDate = "CreateDate";
-        public readonly string FinishDate = "FinishDate";
-        public readonly string Status = "Status";
+        public readonly string TechniqueID = "技术编号";
+        public readonly string Name = "名称";
+        public readonly string Description = "描述";
+        public readonly string CreateDate = "创建日期";
+        public readonly string FinishDate = "完成日期";
+        public readonly string Status = "状态";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
         protected override void AddDataColumn()

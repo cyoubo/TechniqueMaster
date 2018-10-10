@@ -12,12 +12,12 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
 	public class TB_TechniqueLogBuilder : BaseDataTableBuilder
 	 {
 		public readonly string ID = "ID";
-		public readonly string MissionID = "MissionID";
-		public readonly string Date = "Date";
-		public readonly string Context = "Context";
-		public readonly string LogUrl = "LogUrl";
-        public readonly string MissionName = "MissionName";
-        public readonly string TechName = "TechName";
+		public readonly string MissionID = "任务编号";
+		public readonly string Date = "日志时间";
+		public readonly string Context = "学习内容";
+		public readonly string LogUrl = "云笔记";
+        public readonly string MissionName = "任务名称";
+        public readonly string TechName = "技术名称";
 		public readonly string Op_Delete = "删除";
 		public readonly string Op_Edit = "编辑";
 		protected override void AddDataColumn()

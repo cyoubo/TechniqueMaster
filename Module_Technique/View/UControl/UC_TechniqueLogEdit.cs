@@ -68,8 +68,10 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             adapter.NotifyfreshDataTable();
             gridHelper.GridControl.DataSource = adapter.ResultTable;
 
+            gridHelper.SetAllColumnEditable(false);
             gridHelper.SetCellResposity(builder.Op_Delete, repo_HLE_Delete);
             gridHelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);
+            gridHelper.setColunmsVisual(false, builder.ID, builder.MissionID);
         }
 
 
@@ -102,7 +104,10 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             if (controller.CurrentID == 0)
             {
                 if (controller.InsertEntry())
-                    new TechniqueController().ShiftTechStatus(TechniqueController.ExtractID(cmb_Tech.SelectedItem), TechniqueStatusEnum.Start);
+                {
+                    new TechniqueMisssionController().ShiftMissionStatus(TechniqueMisssionController.ExtractID(cmb_Mission.SelectedItem), MissionStatusEnum.Running, calendar_DataPicker.DateTime);
+                    new TechniqueController().ShiftTechStatus(TechniqueController.ExtractID(cmb_Tech.SelectedItem), TechniqueStatusEnum.Start, calendar_DataPicker.DateTime);
+                }
                 else
                     MessageBoxHelper.ShowCreateStateDialog(false);
             }

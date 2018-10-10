@@ -11,16 +11,16 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
     public class TB_TechniqueBuilder : BaseDataTableBuilder
     {
         public readonly string ID = "ID";
-        public readonly string Name = "Name";
-        public readonly string CatalogID = "CatalogID";
-        public readonly string Description = "Description";
-        public readonly string Status = "Status";
-        public readonly string CreateDate = "CreateDate";
-        public readonly string StartDate = "StartDate";
-        public readonly string PauseDate = "PauseDate";
-        public readonly string FinishDate = "FinishDate";
-        public readonly string AbandonDate = "AbandonDate";
-        public readonly string Interest = "Interest";
+        public readonly string Name = "名称";
+        public readonly string CatalogID = "类别ID";
+        public readonly string Description = "描述";
+        public readonly string Status = "状态";
+        public readonly string CreateDate = "创建日期";
+        public readonly string StartDate = "开始日期";
+        public readonly string PauseDate = "暂停日期";
+        public readonly string FinishDate = "完成日期";
+        public readonly string AbandonDate = "终止日期";
+        public readonly string Interest = "兴趣度";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
         public readonly string Op_Detail = "详情";

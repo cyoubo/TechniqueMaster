@@ -62,11 +62,16 @@ namespace TechniqueMaster.Module_Technique.Controller
             return TravelEntitiesByWhereCaluse(mql);
         }
 
-        public bool ShiftTechStatus(long targetID, TechniqueStatusEnum techniqueStatusEnum)
+        public bool ShiftTechStatus(long targetID, TechniqueStatusEnum techniqueStatusEnum,DateTime datetime)
         {
             TB_Technique tech = QueryEntryByID((int)targetID);
-            tech.Status = new EnumUtils().GetEnumdescription(techniqueStatusEnum);
             tech.WhereExpression = TB_TechniqueSet.ID.Equal(targetID);
+            tech.Status = new EnumUtils().GetEnumdescription(techniqueStatusEnum);
+            if (techniqueStatusEnum == TechniqueStatusEnum.Start)
+            {
+                if (string.IsNullOrEmpty(tech.StartDate))
+                    tech.StartDate = FormatDate(datetime);
+            }
             return UpdateEntryByID(tech);
         }
     }
