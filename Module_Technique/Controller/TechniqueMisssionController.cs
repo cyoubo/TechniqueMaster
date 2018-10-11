@@ -72,5 +72,15 @@ namespace TechniqueMaster.Module_Technique.Controller
             }
             return UpdateEntryByID(tech);
         }
+
+        internal bool IsSubMissionFinish(int p)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool HasSubMission(int p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

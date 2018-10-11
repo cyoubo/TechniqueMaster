@@ -15,6 +15,7 @@ using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools;
 using TechniqueMaster.Module_Technique.Componet.Enum;
 using PS.Plot.FrameBasic.Module_Common.Component;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
+using PS.Plot.FrameBasic.Module_Common.Utils;
 
 namespace TechniqueMaster.Module_Technique.View.UControl
 {

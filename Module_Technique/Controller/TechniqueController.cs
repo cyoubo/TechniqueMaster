@@ -67,11 +67,6 @@ namespace TechniqueMaster.Module_Technique.Controller
             TB_Technique tech = QueryEntryByID((int)targetID);
             tech.WhereExpression = TB_TechniqueSet.ID.Equal(targetID);
             tech.Status = new EnumUtils().GetEnumdescription(techniqueStatusEnum);
-            if (techniqueStatusEnum == TechniqueStatusEnum.Start)
-            {
-                if (string.IsNullOrEmpty(tech.StartDate))
-                    tech.StartDate = FormatDate(datetime);
-            }
             return UpdateEntryByID(tech);
         }
     }

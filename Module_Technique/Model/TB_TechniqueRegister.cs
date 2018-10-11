@@ -65,6 +65,12 @@ namespace TechniqueMaster.Module_Technique.Model
             get { return GetPropertyValue<String>("Introspection"); }
             set { SetPropertyValue("Introspection", value); }
         }
+
+        public String Date
+        {
+            get { return GetPropertyValue<String>("Date"); }
+            set { SetPropertyValue("Date", value); }
+        }
     }
 
     [Table("[TB_TechniqueRegister]", DbType.Sqlite)]
@@ -84,6 +90,7 @@ namespace TechniqueMaster.Module_Technique.Model
         public static readonly FieldBase Reason = new FieldBase(DbType.Sqlite, "[TB_TechniqueRegister]", FieldType.Common, "[Reason]");
         public static readonly FieldBase Summary = new FieldBase(DbType.Sqlite, "[TB_TechniqueRegister]", FieldType.Common, "[Summary]");
         public static readonly FieldBase Introspection = new FieldBase(DbType.Sqlite, "[TB_TechniqueRegister]", FieldType.Common, "[Introspection]");
+        public static readonly FieldBase Date = new FieldBase(DbType.Sqlite, "[TB_TechniqueRegister]", FieldType.Common, "[Date]");
     }
 
 }

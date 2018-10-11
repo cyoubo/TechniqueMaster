@@ -5,11 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechniqueMaster.Module_System.Model;
 
 namespace TechniqueMaster.Module_Technique.Controller
 {
-    public class TechniqueRegisterController : ManageBaseController<TB_TechniqueRegister>
+    public class TechniqueRegisterController : ManageBaseController2<TB_TechniqueRegister,TB_TechniqueRegisterSet>
     {
+        public TechniqueRegisterController()
+        {
+            this.dbFactory = GParam.Create();
+        }
+
         protected override Moon.Orm.MQLBase onCreateMQL_QueryAllEntities()
         {
             return TB_TechniqueRegisterSet.SelectAll();
@@ -28,6 +34,13 @@ namespace TechniqueMaster.Module_Technique.Controller
         protected override Moon.Orm.WhereExpression onBlindIDWhere(int entry)
         {
             return TB_TechniqueRegisterSet.ID.Equal(entry);
+        }
+
+        public IList<TB_TechniqueRegister> QueryEntryByTechniqueID(long targetID)
+        {
+            Moon.Orm.MQLBase mql = TB_TechniqueRegisterSet.SelectAll();
+            Moon.Orm.WhereExpression express = TB_TechniqueRegisterSet.TechniqueID.Equal(targetID);
+            return TravelEntitiesByWhereCaluse(mql.Where(express));
         }
     }
 }

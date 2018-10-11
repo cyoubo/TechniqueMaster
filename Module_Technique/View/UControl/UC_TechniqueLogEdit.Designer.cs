@@ -119,18 +119,18 @@
             this.calendar_DataPicker.Location = new System.Drawing.Point(37, 67);
             this.calendar_DataPicker.Name = "calendar_DataPicker";
             this.calendar_DataPicker.ShowMonthHeaders = false;
-            this.calendar_DataPicker.Size = new System.Drawing.Size(410, 318);
+            this.calendar_DataPicker.Size = new System.Drawing.Size(294, 318);
             this.calendar_DataPicker.StyleController = this.layoutControl1;
             this.calendar_DataPicker.TabIndex = 10;
             // 
             // btn_sure
             // 
-            this.btn_sure.Location = new System.Drawing.Point(1091, 353);
+            this.btn_sure.Location = new System.Drawing.Point(1143, 353);
             this.btn_sure.Name = "btn_sure";
-            this.btn_sure.Size = new System.Drawing.Size(126, 32);
+            this.btn_sure.Size = new System.Drawing.Size(74, 32);
             this.btn_sure.StyleController = this.layoutControl1;
             this.btn_sure.TabIndex = 9;
-            this.btn_sure.Text = "simpleButton1";
+            this.btn_sure.Text = "确定";
             this.btn_sure.Click += new System.EventHandler(this.btn_sure_Click);
             // 
             // gridControl_Misssion
@@ -166,37 +166,37 @@
             // 
             // tv_Context
             // 
-            this.tv_Context.Location = new System.Drawing.Point(453, 162);
+            this.tv_Context.Location = new System.Drawing.Point(337, 162);
             this.tv_Context.Name = "tv_Context";
-            this.tv_Context.Size = new System.Drawing.Size(764, 185);
+            this.tv_Context.Size = new System.Drawing.Size(880, 185);
             this.tv_Context.StyleController = this.layoutControl1;
             this.tv_Context.TabIndex = 7;
             // 
             // tv_URL
             // 
-            this.tv_URL.Location = new System.Drawing.Point(548, 101);
+            this.tv_URL.Location = new System.Drawing.Point(432, 101);
             this.tv_URL.Name = "tv_URL";
-            this.tv_URL.Size = new System.Drawing.Size(669, 28);
+            this.tv_URL.Size = new System.Drawing.Size(785, 28);
             this.tv_URL.StyleController = this.layoutControl1;
             this.tv_URL.TabIndex = 6;
             // 
             // cmb_Mission
             // 
-            this.cmb_Mission.Location = new System.Drawing.Point(963, 67);
+            this.cmb_Mission.Location = new System.Drawing.Point(910, 67);
             this.cmb_Mission.Name = "cmb_Mission";
             this.cmb_Mission.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Mission.Size = new System.Drawing.Size(254, 28);
+            this.cmb_Mission.Size = new System.Drawing.Size(307, 28);
             this.cmb_Mission.StyleController = this.layoutControl1;
             this.cmb_Mission.TabIndex = 5;
             // 
             // cmb_Tech
             // 
-            this.cmb_Tech.Location = new System.Drawing.Point(548, 67);
+            this.cmb_Tech.Location = new System.Drawing.Point(432, 67);
             this.cmb_Tech.Name = "cmb_Tech";
             this.cmb_Tech.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Tech.Size = new System.Drawing.Size(314, 28);
+            this.cmb_Tech.Size = new System.Drawing.Size(377, 28);
             this.cmb_Tech.StyleController = this.layoutControl1;
             this.cmb_Tech.TabIndex = 4;
             this.cmb_Tech.SelectedIndexChanged += new System.EventHandler(this.cmb_Tech_SelectedIndexChanged);
@@ -233,61 +233,69 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tv_Context;
-            this.layoutControlItem4.Location = new System.Drawing.Point(416, 68);
+            this.layoutControlItem4.Location = new System.Drawing.Point(300, 68);
             this.layoutControlItem4.Name = "日志内容";
-            this.layoutControlItem4.Size = new System.Drawing.Size(770, 218);
+            this.layoutControlItem4.Size = new System.Drawing.Size(886, 218);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_sure;
-            this.layoutControlItem6.Location = new System.Drawing.Point(1054, 286);
+            this.layoutControlItem6.FillControlToClientArea = false;
+            this.layoutControlItem6.Location = new System.Drawing.Point(1106, 286);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(80, 38);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(132, 38);
+            this.layoutControlItem6.Size = new System.Drawing.Size(80, 38);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            this.layoutControlItem6.TrimClientAreaToControl = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(416, 286);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(300, 286);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(638, 38);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(806, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cmb_Tech;
-            this.layoutControlItem1.Location = new System.Drawing.Point(416, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(300, 0);
             this.layoutControlItem1.Name = "所属技术";
-            this.layoutControlItem1.Size = new System.Drawing.Size(415, 34);
+            this.layoutControlItem1.Size = new System.Drawing.Size(478, 34);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cmb_Mission;
-            this.layoutControlItem2.Location = new System.Drawing.Point(831, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(778, 0);
             this.layoutControlItem2.Name = "所属任务";
-            this.layoutControlItem2.Size = new System.Drawing.Size(355, 34);
+            this.layoutControlItem2.Size = new System.Drawing.Size(408, 34);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tv_URL;
-            this.layoutControlItem3.Location = new System.Drawing.Point(416, 34);
+            this.layoutControlItem3.Location = new System.Drawing.Point(300, 34);
             this.layoutControlItem3.Name = "云笔记链接";
-            this.layoutControlItem3.Size = new System.Drawing.Size(770, 34);
+            this.layoutControlItem3.Size = new System.Drawing.Size(886, 34);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.calendar_DataPicker;
+            this.layoutControlItem7.FillControlToClientArea = false;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(416, 324);
+            this.layoutControlItem7.Size = new System.Drawing.Size(300, 324);
+            this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            this.layoutControlItem7.TrimClientAreaToControl = false;
             // 
             // layoutControlGroup3
             // 

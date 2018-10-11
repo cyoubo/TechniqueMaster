@@ -141,6 +141,18 @@
     <Compile Include="Module_Technique\View\UControl\UC_TechniqueMission.Designer.cs">
       <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegister.Designer.cs">
+      <DependentUpon>UC_TechniqueRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueRegisterEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueMission.resx">
       <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueRegister.resx">
+      <DependentUpon>UC_TechniqueRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.resx">
+      <DependentUpon>UC_TechniqueRegisterEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>

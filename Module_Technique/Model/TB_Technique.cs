@@ -69,42 +69,6 @@ namespace TechniqueMaster.Module_Technique.Model
         /// <summary>
         /// 
         /// </summary>
-        public String StartDate
-        {
-            get { return GetPropertyValue<String>("StartDate"); }
-            set { SetPropertyValue("StartDate", value); }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public String PauseDate
-        {
-            get { return GetPropertyValue<String>("PauseDate"); }
-            set { SetPropertyValue("PauseDate", value); }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public String FinishDate
-        {
-            get { return GetPropertyValue<String>("FinishDate"); }
-            set { SetPropertyValue("FinishDate", value); }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public String AbandonDate
-        {
-            get { return GetPropertyValue<String>("AbandonDate"); }
-            set { SetPropertyValue("AbandonDate", value); }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public Int64 Interest
         {
             get { return GetPropertyValue<Int64>("Interest"); }
@@ -134,10 +98,6 @@ namespace TechniqueMaster.Module_Technique.Model
         public static readonly FieldBase Description = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[Description]");
         public static readonly FieldBase Status = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[Status]");
         public static readonly FieldBase CreateDate = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[CreateDate]");
-        public static readonly FieldBase StartDate = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[StartDate]");
-        public static readonly FieldBase PauseDate = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[PauseDate]");
-        public static readonly FieldBase FinishDate = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[FinishDate]");
-        public static readonly FieldBase AbandonDate = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[AbandonDate]");
         public static readonly FieldBase Interest = new FieldBase(DbType.Sqlite, "[TB_Technique]", FieldType.Common, "[Interest]");
     }
 
