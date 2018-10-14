@@ -42,8 +42,7 @@ namespace TechniqueMaster.Module_Technique.Controller
 
         public static bool IsExitCatalogIDReference(int currentID)
         {
-            return false;
-            //return new TechniqueController().ExsitByID<TB_TechniqueSet>(currentID);
+            return new TechniqueController().ExsitByID<TB_TechniqueSet>(currentID);
         }
 
         public static long ExtractID(object p)

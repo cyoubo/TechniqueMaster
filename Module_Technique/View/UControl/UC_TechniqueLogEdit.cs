@@ -72,6 +72,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             gridHelper.SetCellResposity(builder.Op_Delete, repo_HLE_Delete);
             gridHelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);
             gridHelper.setColunmsVisual(false, builder.ID, builder.MissionID);
+            gridHelper.SetColMaxWidth(builder.Op_Delete, 80);
+            gridHelper.SetColMaxWidth(builder.Op_Edit, 80);
         }
 
 

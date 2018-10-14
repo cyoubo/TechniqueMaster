@@ -47,7 +47,7 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             adapter.NotifyfreshDataTable();
 
             gridhelper.GridControl.DataSource = adapter.ResultTable;
-            gridhelper.SetColunmOption(builder.ID, false, true);
+            gridhelper.SetColunmOption(builder.ID, false, false);
             gridhelper.SetColunmOption(builder.Name, false, true);
             gridhelper.SetColunmOption(builder.Description, false, true);
             gridhelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);

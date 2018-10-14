@@ -35,11 +35,11 @@
             this.barBtn_TechniqueEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_TechniqueMission = new DevExpress.XtraBars.BarButtonItem();
             this.barBtn_UC_TechniqueLogEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtn_UC_TechniqueLogScan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_Control = new DevExpress.XtraTab.XtraTabControl();
-            this.barBtn_UC_TechniqueLogScan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab_Control)).BeginInit();
             this.SuspendLayout();
@@ -56,13 +56,12 @@
             this.barBtn_UC_TechniqueLogEdit,
             this.barBtn_UC_TechniqueLogScan});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.ShowQatLocationSelector = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1029, 184);
+            this.ribbonControl1.Size = new System.Drawing.Size(686, 120);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // barBtn_TechniqueEvaluate
@@ -110,6 +109,15 @@
             this.barBtn_UC_TechniqueLogEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtn_UC_TechniqueLogEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_TechniqueLogEdit_ItemClick);
             // 
+            // barBtn_UC_TechniqueLogScan
+            // 
+            this.barBtn_UC_TechniqueLogScan.Caption = "日志浏览";
+            this.barBtn_UC_TechniqueLogScan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_TechniqueLogScan.Glyph")));
+            this.barBtn_UC_TechniqueLogScan.Id = 6;
+            this.barBtn_UC_TechniqueLogScan.Name = "barBtn_UC_TechniqueLogScan";
+            this.barBtn_UC_TechniqueLogScan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_UC_TechniqueLogScan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_TechniqueLogScan_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -138,31 +146,21 @@
             // 
             this.tab_Control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_Control.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom;
-            this.tab_Control.Location = new System.Drawing.Point(0, 184);
-            this.tab_Control.Margin = new System.Windows.Forms.Padding(4);
+            this.tab_Control.Location = new System.Drawing.Point(0, 120);
             this.tab_Control.Name = "tab_Control";
-            this.tab_Control.Size = new System.Drawing.Size(1029, 340);
+            this.tab_Control.Size = new System.Drawing.Size(686, 291);
             this.tab_Control.TabIndex = 1;
-            // 
-            // barBtn_UC_TechniqueLogScan
-            // 
-            this.barBtn_UC_TechniqueLogScan.Caption = "日志浏览";
-            this.barBtn_UC_TechniqueLogScan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_TechniqueLogScan.Glyph")));
-            this.barBtn_UC_TechniqueLogScan.Id = 6;
-            this.barBtn_UC_TechniqueLogScan.Name = "barBtn_UC_TechniqueLogScan";
-            this.barBtn_UC_TechniqueLogScan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barBtn_UC_TechniqueLogScan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_TechniqueLogScan_ItemClick);
             // 
             // Frm_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 524);
+            this.ClientSize = new System.Drawing.Size(686, 411);
             this.Controls.Add(this.tab_Control);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_Main";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "学习助手";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab_Control)).EndInit();

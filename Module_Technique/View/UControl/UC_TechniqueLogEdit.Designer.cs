@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.dateE_Date = new DevExpress.XtraEditors.DateEdit();
             this.calendar_DataPicker = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.btn_sure = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_Misssion = new DevExpress.XtraGrid.GridControl();
@@ -52,10 +51,9 @@
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dateE_Date = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendar_DataPicker.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Misssion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Misssion)).BeginInit();
@@ -77,11 +75,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.dateE_Date);
             this.layoutControl1.Controls.Add(this.calendar_DataPicker);
             this.layoutControl1.Controls.Add(this.btn_sure);
             this.layoutControl1.Controls.Add(this.gridControl_Misssion);
@@ -89,45 +88,35 @@
             this.layoutControl1.Controls.Add(this.tv_URL);
             this.layoutControl1.Controls.Add(this.cmb_Mission);
             this.layoutControl1.Controls.Add(this.cmb_Tech);
+            this.layoutControl1.Controls.Add(this.dateE_Date);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1254, 712);
+            this.layoutControl1.Size = new System.Drawing.Size(878, 453);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // dateE_Date
-            // 
-            this.dateE_Date.EditValue = null;
-            this.dateE_Date.Location = new System.Drawing.Point(132, 459);
-            this.dateE_Date.Name = "dateE_Date";
-            this.dateE_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateE_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateE_Date.Size = new System.Drawing.Size(1085, 28);
-            this.dateE_Date.StyleController = this.layoutControl1;
-            this.dateE_Date.TabIndex = 11;
-            this.dateE_Date.EditValueChanged += new System.EventHandler(this.dateE_Date_EditValueChanged);
             // 
             // calendar_DataPicker
             // 
             this.calendar_DataPicker.AutoSize = false;
             this.calendar_DataPicker.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calendar_DataPicker.Location = new System.Drawing.Point(37, 67);
+            this.calendar_DataPicker.Location = new System.Drawing.Point(24, 43);
+            this.calendar_DataPicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.calendar_DataPicker.Name = "calendar_DataPicker";
             this.calendar_DataPicker.ShowMonthHeaders = false;
-            this.calendar_DataPicker.Size = new System.Drawing.Size(294, 318);
+            this.calendar_DataPicker.Size = new System.Drawing.Size(207, 232);
             this.calendar_DataPicker.StyleController = this.layoutControl1;
             this.calendar_DataPicker.TabIndex = 10;
             // 
             // btn_sure
             // 
-            this.btn_sure.Location = new System.Drawing.Point(1143, 353);
+            this.btn_sure.Location = new System.Drawing.Point(778, 241);
+            this.btn_sure.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_sure.Name = "btn_sure";
-            this.btn_sure.Size = new System.Drawing.Size(74, 32);
+            this.btn_sure.Size = new System.Drawing.Size(76, 22);
             this.btn_sure.StyleController = this.layoutControl1;
             this.btn_sure.TabIndex = 9;
             this.btn_sure.Text = "确定";
@@ -135,13 +124,15 @@
             // 
             // gridControl_Misssion
             // 
-            this.gridControl_Misssion.Location = new System.Drawing.Point(37, 520);
+            this.gridControl_Misssion.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gridControl_Misssion.Location = new System.Drawing.Point(24, 365);
             this.gridControl_Misssion.MainView = this.gridView_Misssion;
+            this.gridControl_Misssion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControl_Misssion.Name = "gridControl_Misssion";
             this.gridControl_Misssion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repo_HLE_Delete,
             this.repo_HLE_Edit});
-            this.gridControl_Misssion.Size = new System.Drawing.Size(1180, 155);
+            this.gridControl_Misssion.Size = new System.Drawing.Size(830, 64);
             this.gridControl_Misssion.TabIndex = 8;
             this.gridControl_Misssion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Misssion});
@@ -166,37 +157,41 @@
             // 
             // tv_Context
             // 
-            this.tv_Context.Location = new System.Drawing.Point(337, 162);
+            this.tv_Context.Location = new System.Drawing.Point(235, 110);
+            this.tv_Context.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tv_Context.Name = "tv_Context";
-            this.tv_Context.Size = new System.Drawing.Size(880, 185);
+            this.tv_Context.Size = new System.Drawing.Size(619, 127);
             this.tv_Context.StyleController = this.layoutControl1;
             this.tv_Context.TabIndex = 7;
             // 
             // tv_URL
             // 
-            this.tv_URL.Location = new System.Drawing.Point(432, 101);
+            this.tv_URL.Location = new System.Drawing.Point(300, 67);
+            this.tv_URL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tv_URL.Name = "tv_URL";
-            this.tv_URL.Size = new System.Drawing.Size(785, 28);
+            this.tv_URL.Size = new System.Drawing.Size(554, 20);
             this.tv_URL.StyleController = this.layoutControl1;
             this.tv_URL.TabIndex = 6;
             // 
             // cmb_Mission
             // 
-            this.cmb_Mission.Location = new System.Drawing.Point(910, 67);
+            this.cmb_Mission.Location = new System.Drawing.Point(636, 43);
+            this.cmb_Mission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Mission.Name = "cmb_Mission";
             this.cmb_Mission.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Mission.Size = new System.Drawing.Size(307, 28);
+            this.cmb_Mission.Size = new System.Drawing.Size(218, 20);
             this.cmb_Mission.StyleController = this.layoutControl1;
             this.cmb_Mission.TabIndex = 5;
             // 
             // cmb_Tech
             // 
-            this.cmb_Tech.Location = new System.Drawing.Point(432, 67);
+            this.cmb_Tech.Location = new System.Drawing.Point(300, 43);
+            this.cmb_Tech.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Tech.Name = "cmb_Tech";
             this.cmb_Tech.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Tech.Size = new System.Drawing.Size(377, 28);
+            this.cmb_Tech.Size = new System.Drawing.Size(267, 20);
             this.cmb_Tech.StyleController = this.layoutControl1;
             this.cmb_Tech.TabIndex = 4;
             this.cmb_Tech.SelectedIndexChanged += new System.EventHandler(this.cmb_Tech_SelectedIndexChanged);
@@ -211,7 +206,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1254, 712);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(878, 453);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -227,23 +222,23 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1224, 392);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(858, 279);
             this.layoutControlGroup2.Text = "日志登记";
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tv_Context;
-            this.layoutControlItem4.Location = new System.Drawing.Point(300, 68);
+            this.layoutControlItem4.Location = new System.Drawing.Point(211, 48);
             this.layoutControlItem4.Name = "日志内容";
-            this.layoutControlItem4.Size = new System.Drawing.Size(886, 218);
+            this.layoutControlItem4.Size = new System.Drawing.Size(623, 150);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_sure;
             this.layoutControlItem6.FillControlToClientArea = false;
-            this.layoutControlItem6.Location = new System.Drawing.Point(1106, 286);
+            this.layoutControlItem6.Location = new System.Drawing.Point(754, 198);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -256,34 +251,34 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(300, 286);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(211, 198);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(806, 38);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(543, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cmb_Tech;
-            this.layoutControlItem1.Location = new System.Drawing.Point(300, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(211, 0);
             this.layoutControlItem1.Name = "所属技术";
-            this.layoutControlItem1.Size = new System.Drawing.Size(478, 34);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem1.Size = new System.Drawing.Size(336, 24);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cmb_Mission;
-            this.layoutControlItem2.Location = new System.Drawing.Point(778, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(547, 0);
             this.layoutControlItem2.Name = "所属任务";
-            this.layoutControlItem2.Size = new System.Drawing.Size(408, 34);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem2.Size = new System.Drawing.Size(287, 24);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tv_URL;
-            this.layoutControlItem3.Location = new System.Drawing.Point(300, 34);
+            this.layoutControlItem3.Location = new System.Drawing.Point(211, 24);
             this.layoutControlItem3.Name = "云笔记链接";
-            this.layoutControlItem3.Size = new System.Drawing.Size(886, 34);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem3.Size = new System.Drawing.Size(623, 24);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem7
             // 
@@ -291,7 +286,7 @@
             this.layoutControlItem7.FillControlToClientArea = false;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(300, 324);
+            this.layoutControlItem7.Size = new System.Drawing.Size(211, 236);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.SupportHorzAlignment;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -302,10 +297,10 @@
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem8,
             this.layoutControlItem5});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 392);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 279);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1224, 290);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(858, 154);
             this.layoutControlGroup3.Text = "日志浏览";
             // 
             // layoutControlItem8
@@ -313,30 +308,45 @@
             this.layoutControlItem8.Control = this.dateE_Date;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "日志日期";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1186, 34);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem8.Size = new System.Drawing.Size(834, 24);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.gridControl_Misssion;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 34);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem5.Name = "日志列表";
-            this.layoutControlItem5.Size = new System.Drawing.Size(1186, 188);
+            this.layoutControlItem5.Size = new System.Drawing.Size(834, 87);
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(90, 22);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // dateE_Date
+            // 
+            this.dateE_Date.EditValue = null;
+            this.dateE_Date.Location = new System.Drawing.Point(89, 322);
+            this.dateE_Date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateE_Date.Name = "dateE_Date";
+            this.dateE_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateE_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateE_Date.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dateE_Date.Size = new System.Drawing.Size(765, 20);
+            this.dateE_Date.StyleController = this.layoutControl1;
+            this.dateE_Date.TabIndex = 11;
+            this.dateE_Date.EditValueChanged += new System.EventHandler(this.dateE_Date_EditValueChanged);
             // 
             // UC_TechniqueLogEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_TechniqueLogEdit";
-            this.Size = new System.Drawing.Size(1254, 712);
+            this.Size = new System.Drawing.Size(878, 453);
             this.Load += new System.EventHandler(this.UC_TechniqueLogEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendar_DataPicker.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Misssion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Misssion)).EndInit();
@@ -358,6 +368,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateE_Date.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,11 +395,11 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.Controls.CalendarControl calendar_DataPicker;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.DateEdit dateE_Date;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_Delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_Edit;
+        private DevExpress.XtraEditors.DateEdit dateE_Date;
 
     }
 }
