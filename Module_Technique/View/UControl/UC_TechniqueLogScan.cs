@@ -51,9 +51,7 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 
         private void schedulerControl1_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
         {
-
-
+            return;
         }
-
     }
 }

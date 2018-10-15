@@ -79,6 +79,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             tv_Summary.Text = controller.Entry.Summary;
             if(string.IsNullOrEmpty(controller.Entry.Date) == false)
                 dateE_Date.DateTime = DateTime.Parse(controller.Entry.Date);
+
+            btn_Sure.Enabled = false;
         }
 
         public void onExtractInputValue()
@@ -109,12 +111,37 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             if (controller.UpdateEntryByID())
             {
                 onRefreshRegistTable(TechniqueController.ExtractID(cmb_Tech.SelectedItem));
+                controller.CurrentID = 0;
+                controller.LoadEntry();
                 onFillInputValue();
                 MessageBoxHelper.ShowUpdateStateDialog(true);
             }
             else
                 MessageBoxHelper.ShowUpdateStateDialog(false);
 
+        }
+
+        private void repo_HLE_Edit_Click(object sender, EventArgs e)
+        {
+            int currentRegistID = gridHelper.getFocuseRowCellValue_Int(builder.ID);
+            controller.CurrentID = currentRegistID;
+            controller.LoadEntry();
+            onFillInputValue();
+            btn_Sure.Enabled = true;
+        }
+
+        private void repo_HLE_Delete_Click(object sender, EventArgs e)
+        {
+            int currentRegistID = gridHelper.getFocuseRowCellValue_Int(builder.ID);
+            if (controller.DeleteEntryByID(currentRegistID))
+            {
+                controller.CurrentID = 0;
+                controller.LoadEntry();
+                onInitialUI();
+                MessageBoxHelper.ShowDeleteStateDialog(true);
+            }
+            else
+                MessageBoxHelper.ShowDeleteStateDialog(false);
         }
     }
 }
