@@ -28,7 +28,6 @@ namespace TechniqueMaster
             onInitialUI();
         }
 
-
         public void onCreateComponet()
         {
             tabhelper = new TabControlHelper(tab_Control);

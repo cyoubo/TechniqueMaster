@@ -57,8 +57,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             if (adapter != null)
                 adapter.NotifyClearTable();
 
-            adapter.Initial(controller_tech.TravleAllEntities(), builder);
-            adapter.NotifyfreshDataTable();
+            adapter.Initial(builder);
+            adapter.NotifyfreshDataTable(controller_tech.TravleAllEntities());
             gridHelper.GridControl.DataSource = adapter.ResultTable;
             gridHelper.SetAllColumnVisible(false);
             gridHelper.SetColunmOption(builder.Name, false, true);

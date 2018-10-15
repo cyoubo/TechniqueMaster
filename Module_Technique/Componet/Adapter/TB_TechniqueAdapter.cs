@@ -34,7 +34,7 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
             onCreateDataColumn(Op_Detail);
         }
     }
-    public class TB_TechniqueAdapter : BaseGridControlAdapter<TB_Technique>
+    public class TB_TechniqueAdapter : ScanGridControlAdapter<TB_Technique>
     {
         public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_Technique t)
         {

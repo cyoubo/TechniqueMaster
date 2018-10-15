@@ -56,8 +56,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
                 adapter_tech.NotifyDestoryTable();
             }
 
-            adapter_tech.Initial(controller_tech.TravleAllEntities(), builder_tech);
-            adapter_tech.NotifyfreshDataTable();
+            adapter_tech.Initial(builder_tech);
+            adapter_tech.NotifyfreshDataTable(controller_tech.TravleAllEntities());
 
             gridhelper_tech.GridControl.DataSource = adapter_tech.ResultTable;
             gridhelper_tech.SetAllColumnEditable(false);
