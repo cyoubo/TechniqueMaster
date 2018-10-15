@@ -221,7 +221,7 @@
     <Folder Include="Module_Technique\View\Form\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
+    <ProjectReference Include="..\..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
       <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
       <Name>PS.Plot.FrameBasic</Name>
     </ProjectReference>
