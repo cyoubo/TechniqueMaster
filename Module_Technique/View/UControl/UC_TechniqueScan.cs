@@ -16,6 +16,7 @@ using PS.Plot.FrameBasic.Module_Common.Utils;
 using OfficeAider.Module_Technique.Componet.Enum;
 using TechniqueMaster.Module_Technique.Componet.Strategy;
 using DevExpress.XtraScheduler;
+using TechniqueMaster.Module_Technique.View.Frm;
 
 namespace TechniqueMaster.Module_Technique.View.UControl
 {
@@ -122,6 +123,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             gridhelper_log.SetColunmOption(builder_log.TechName, false, false);
             gridhelper_log.SetColMaxWidth(builder_log.Date, 120);
             gridhelper_log.SetColMaxWidth(builder_log.LogUrl, 100);
+
+            btn_showInCanlender.Enabled = controller_tech.CurrentID != 0;
         }
 
         private void gridView_Technique_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -171,6 +174,14 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             var items = controller_log.QueryEntiesByMissionID(currentMission);
             adapter_log.NotifyfreshDataTable(items);
             gridhelper_log.GridControl.DataSource = adapter_log.ResultTable;
+        }
+
+        private void btn_showInCanlender_Click(object sender, EventArgs e)
+        {
+            Frm_TechniqueDetialScheduler frm = new Frm_TechniqueDetialScheduler();
+            frm.CurrentTechID = controller_tech.CurrentID;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
 
 

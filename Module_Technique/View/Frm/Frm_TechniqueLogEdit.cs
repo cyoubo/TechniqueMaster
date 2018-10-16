@@ -45,6 +45,11 @@ namespace TechniqueMaster.Module_Technique.View.Frm
             tv_MissionName.Text = new TechniqueMisssionController().QueryEntryByID((int)controller.Entry.MissionID).Name;
             tv_URL.Text = controller.Entry.LogUrl;
             dateE_Date.DateTime = DateTime.Parse(controller.Entry.Date);
+
+            tv_Context.Properties.ReadOnly = IsReadOnly;
+            tv_MissionName.Properties.ReadOnly = IsReadOnly;
+            tv_URL.Properties.ReadOnly = IsReadOnly;
+            dateE_Date.ReadOnly = IsReadOnly;
         }
 
         public void onExtractInputValue()
@@ -93,5 +98,7 @@ namespace TechniqueMaster.Module_Technique.View.Frm
                 MessageBoxHelper.ShowDeleteStateDialog(false);
 
         }
+
+        public bool IsReadOnly { get; set; }
     }
 }
