@@ -51,6 +51,7 @@
             this.schedulerControl1.TabIndex = 0;
             this.schedulerControl1.Text = "schedulerControl1";
             this.schedulerControl1.Views.DayView.AllDayAreaScrollBarVisible = false;
+            this.schedulerControl1.Views.DayView.Enabled = false;
             this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl1.Views.FullWeekView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
@@ -61,7 +62,8 @@
             this.schedulerControl1.Views.WorkWeekView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.WorkWeekView.Enabled = false;
             this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
-            this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
+            this.schedulerControl1.PopupMenuShowing += new DevExpress.XtraScheduler.PopupMenuShowingEventHandler(this.schedulerControl1_PopupMenuShowing);
+            this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing_1);
             // 
             // schedulerStorage1
             // 

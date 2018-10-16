@@ -43,5 +43,16 @@ namespace TechniqueMaster.Module_Technique.Controller
             MQLBase mql = TB_TechniqueLogSet.SelectAll().Where(TB_TechniqueLogSet.Date.Equal(datestr));
             return TravelEntitiesByWhereCaluse(mql);
         }
+
+        public IList<TB_TechniqueLog> QueryEntiesByMissionID(int currentMission)
+        {
+            MQLBase mql = TB_TechniqueLogSet.SelectAll().Where(TB_TechniqueLogSet.MissionID.Equal(currentMission));
+            return TravelEntitiesByWhereCaluse(mql);
+        }
+
+        public bool ExistByMissionID(int currentMissionID)
+        {
+            return ExistByWhereCaluse(TB_TechniqueLogSet.MissionID.Equal(currentMissionID));
+        }
     }
 }

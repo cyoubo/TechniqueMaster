@@ -65,12 +65,12 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             if (adapter != null)
                 adapter.NotifyClearTable();
 
-            if (cmb_Tech.SelectedIndex != -1)
-                adapter.Initial(controller.QueryEntriesByTechniquID(TechniqueController.ExtractID(cmb_Tech.SelectedItem)), builder);
-            else
-                adapter.Initial(builder);
+            adapter.Initial(builder);
 
-            adapter.NotifyfreshDataTable();
+            if (cmb_Tech.SelectedIndex != -1)
+                adapter.NotifyfreshDataTable(controller.QueryEntriesByTechniquID(TechniqueController.ExtractID(cmb_Tech.SelectedItem)));
+               
+
             gridHelper.GridControl.DataSource = adapter.ResultTable;
             gridHelper.SetAllColumnEditable(false);
             gridHelper.SetAllColumnVisible(false);
@@ -176,6 +176,11 @@ namespace TechniqueMaster.Module_Technique.View.UControl
         {
             int currentMissionID = gridHelper.getFocuseRowCellValue_Int(builder.ID);
             //先判断是否有下属的日志
+            if (new TechniqueLogController().ExistByMissionID(currentMissionID))
+            {
+                MessageBoxHelper.ShowErrorDialog("当前任务包含日志记录，请删除对应日志后重试...");
+                return;
+            }
 
             //执行删除操作
             if (controller.DeleteEntryByID(currentMissionID))

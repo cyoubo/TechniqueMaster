@@ -80,10 +80,17 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tab_Mission = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControl_Mission = new DevExpress.XtraGrid.GridControl();
             this.gridView_Mission = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repo_HLE_detail = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridControl_log = new DevExpress.XtraGrid.GridControl();
+            this.gridView_log = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -141,10 +148,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.tab_Mission.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Mission)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Mission)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_detail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
+            this.layoutControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_log)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_log)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -157,7 +173,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.layoutControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1290, 830);
-            this.splitContainerControl1.SplitterPosition = 265;
+            this.splitContainerControl1.SplitterPosition = 320;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -168,7 +184,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(265, 830);
+            this.layoutControl1.Size = new System.Drawing.Size(320, 830);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -177,7 +193,7 @@
             this.gridControl_Technique.Location = new System.Drawing.Point(18, 18);
             this.gridControl_Technique.MainView = this.gridView_Technique;
             this.gridControl_Technique.Name = "gridControl_Technique";
-            this.gridControl_Technique.Size = new System.Drawing.Size(229, 794);
+            this.gridControl_Technique.Size = new System.Drawing.Size(284, 794);
             this.gridControl_Technique.TabIndex = 5;
             this.gridControl_Technique.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Technique});
@@ -198,7 +214,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(265, 830);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(320, 830);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
@@ -206,7 +222,7 @@
             this.layoutControlItem3.Control = this.gridControl_Technique;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(235, 800);
+            this.layoutControlItem3.Size = new System.Drawing.Size(290, 800);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -217,7 +233,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(1017, 830);
+            this.layoutControl2.Size = new System.Drawing.Size(962, 830);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -226,7 +242,7 @@
             this.tab_Info.Location = new System.Drawing.Point(18, 18);
             this.tab_Info.Name = "tab_Info";
             this.tab_Info.SelectedTabPage = this.tab_evaluate;
-            this.tab_Info.Size = new System.Drawing.Size(981, 794);
+            this.tab_Info.Size = new System.Drawing.Size(926, 794);
             this.tab_Info.TabIndex = 21;
             this.tab_Info.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tab_evaluate,
@@ -674,10 +690,25 @@
             // 
             // tab_Mission
             // 
-            this.tab_Mission.Controls.Add(this.gridControl_Mission);
+            this.tab_Mission.Controls.Add(this.splitContainerControl2);
             this.tab_Mission.Name = "tab_Mission";
-            this.tab_Mission.Size = new System.Drawing.Size(971, 749);
+            this.tab_Mission.Size = new System.Drawing.Size(916, 749);
             this.tab_Mission.Text = "任务列表";
+            // 
+            // splitContainerControl2
+            // 
+            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.Horizontal = false;
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.gridControl_Mission);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.layoutControl4);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(916, 749);
+            this.splitContainerControl2.SplitterPosition = 398;
+            this.splitContainerControl2.TabIndex = 3;
+            this.splitContainerControl2.Text = "splitContainerControl2";
             // 
             // gridControl_Mission
             // 
@@ -685,7 +716,9 @@
             this.gridControl_Mission.Location = new System.Drawing.Point(0, 0);
             this.gridControl_Mission.MainView = this.gridView_Mission;
             this.gridControl_Mission.Name = "gridControl_Mission";
-            this.gridControl_Mission.Size = new System.Drawing.Size(971, 749);
+            this.gridControl_Mission.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repo_HLE_detail});
+            this.gridControl_Mission.Size = new System.Drawing.Size(916, 398);
             this.gridControl_Mission.TabIndex = 0;
             this.gridControl_Mission.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Mission});
@@ -695,6 +728,52 @@
             this.gridView_Mission.GridControl = this.gridControl_Mission;
             this.gridView_Mission.Name = "gridView_Mission";
             this.gridView_Mission.OptionsView.ShowGroupPanel = false;
+            this.gridView_Mission.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView_Mission_RowClick);
+            // 
+            // repo_HLE_detail
+            // 
+            this.repo_HLE_detail.AutoHeight = false;
+            this.repo_HLE_detail.Name = "repo_HLE_detail";
+            this.repo_HLE_detail.Click += new System.EventHandler(this.repo_HLE_detail_Click);
+            // 
+            // layoutControl4
+            // 
+            this.layoutControl4.Controls.Add(this.gridControl_log);
+            this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl4.Name = "layoutControl4";
+            this.layoutControl4.Root = this.layoutControlGroup8;
+            this.layoutControl4.Size = new System.Drawing.Size(916, 343);
+            this.layoutControl4.TabIndex = 2;
+            this.layoutControl4.Text = "layoutControl4";
+            // 
+            // gridControl_log
+            // 
+            this.gridControl_log.Location = new System.Drawing.Point(18, 45);
+            this.gridControl_log.MainView = this.gridView_log;
+            this.gridControl_log.Name = "gridControl_log";
+            this.gridControl_log.Size = new System.Drawing.Size(880, 280);
+            this.gridControl_log.TabIndex = 4;
+            this.gridControl_log.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_log});
+            // 
+            // gridView_log
+            // 
+            this.gridView_log.GridControl = this.gridControl_log;
+            this.gridView_log.Name = "gridView_log";
+            this.gridView_log.OptionsView.ShowGroupPanel = false;
+            // 
+            // layoutControlGroup8
+            // 
+            this.layoutControlGroup8.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup8.GroupBordersVisible = false;
+            this.layoutControlGroup8.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem22});
+            this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup8.Name = "layoutControlGroup8";
+            this.layoutControlGroup8.OptionsItemText.TextToControlDistance = 5;
+            this.layoutControlGroup8.Size = new System.Drawing.Size(916, 343);
+            this.layoutControlGroup8.TextVisible = false;
             // 
             // layoutControlGroup2
             // 
@@ -705,7 +784,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1017, 830);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(962, 830);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem4
@@ -713,9 +792,19 @@
             this.layoutControlItem4.Control = this.tab_Info;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(987, 800);
+            this.layoutControlItem4.Size = new System.Drawing.Size(932, 800);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem22
+            // 
+            this.layoutControlItem22.Control = this.gridControl_log;
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(886, 313);
+            this.layoutControlItem22.Text = "日志列表";
+            this.layoutControlItem22.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(72, 22);
             // 
             // UC_TechniqueScan
             // 
@@ -782,10 +871,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             this.tab_Mission.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_Mission)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Mission)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_detail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
+            this.layoutControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_log)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_log)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -848,5 +946,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_detail;
+        private DevExpress.XtraLayout.LayoutControl layoutControl4;
+        private DevExpress.XtraGrid.GridControl gridControl_log;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_log;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup8;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
     }
 }

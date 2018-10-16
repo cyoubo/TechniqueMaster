@@ -33,7 +33,7 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
 			onCreateDataColumn(Op_Edit);
 		 }
 	 }
-	public class TB_TechniqueLogAdapter : BaseGridControlAdapter3<TB_TechniqueLog>
+	public class TB_TechniqueLogAdapter : ScanGridControlAdapter<TB_TechniqueLog>
 	 {
         private Dictionary<long, string> MissionDict;
         private Dictionary<long, string> TechDict;

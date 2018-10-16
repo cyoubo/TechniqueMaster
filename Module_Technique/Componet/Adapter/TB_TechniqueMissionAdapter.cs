@@ -19,6 +19,7 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
         public readonly string Status = "状态";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
+        
         protected override void AddDataColumn()
         {
             onCreateDataColumn(ID);
@@ -33,7 +34,7 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
         }
     }
 
-    public class TB_TechniqueMissionAdapter : BaseGridControlAdapter<TB_TechniqueMission>
+    public class TB_TechniqueMissionAdapter : ScanGridControlAdapter<TB_TechniqueMission>
     {
         public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_TechniqueMission t)
         {

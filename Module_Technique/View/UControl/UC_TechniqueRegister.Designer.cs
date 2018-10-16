@@ -145,9 +145,9 @@
             // 
             // btn_sure
             // 
-            this.btn_sure.Location = new System.Drawing.Point(766, 648);
+            this.btn_sure.Location = new System.Drawing.Point(818, 648);
             this.btn_sure.Name = "btn_sure";
-            this.btn_sure.Size = new System.Drawing.Size(126, 32);
+            this.btn_sure.Size = new System.Drawing.Size(74, 32);
             this.btn_sure.StyleController = this.layoutControl1;
             this.btn_sure.TabIndex = 10;
             this.btn_sure.Text = "确定";
@@ -186,6 +186,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateE_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateE_Date.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dateE_Date.Size = new System.Drawing.Size(348, 28);
             this.dateE_Date.StyleController = this.layoutControl1;
             this.dateE_Date.TabIndex = 5;
@@ -269,18 +270,23 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btn_sure;
-            this.layoutControlItem7.Location = new System.Drawing.Point(748, 630);
+            this.layoutControlItem7.FillControlToClientArea = false;
+            this.layoutControlItem7.Location = new System.Drawing.Point(800, 630);
+            this.layoutControlItem7.MaxSize = new System.Drawing.Size(80, 38);
+            this.layoutControlItem7.MinSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(132, 38);
+            this.layoutControlItem7.Size = new System.Drawing.Size(80, 38);
+            this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            this.layoutControlItem7.TrimClientAreaToControl = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 630);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(748, 38);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(800, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3

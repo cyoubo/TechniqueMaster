@@ -84,7 +84,7 @@
             this.barBtn_TechniqueCatalog.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_TechniqueCatalog.Glyph")));
             this.barBtn_TechniqueCatalog.Id = 2;
             this.barBtn_TechniqueCatalog.Name = "barBtn_TechniqueCatalog";
-            this.barBtn_TechniqueCatalog.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_TechniqueCatalog.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.barBtn_TechniqueCatalog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_TechniqueCatalog_ItemClick);
             // 
             // barBtn_TechniqueEdit
@@ -126,6 +126,7 @@
             // barBtn_UC_TechniqueRegister
             // 
             this.barBtn_UC_TechniqueRegister.Caption = "技能状态更新";
+            this.barBtn_UC_TechniqueRegister.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_TechniqueRegister.Glyph")));
             this.barBtn_UC_TechniqueRegister.Id = 7;
             this.barBtn_UC_TechniqueRegister.Name = "barBtn_UC_TechniqueRegister";
             this.barBtn_UC_TechniqueRegister.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_TechniqueRegister_ItemClick);
@@ -133,6 +134,7 @@
             // barBtn_UC_TechniqueRegisterEdit
             // 
             this.barBtn_UC_TechniqueRegisterEdit.Caption = "技能状态编辑";
+            this.barBtn_UC_TechniqueRegisterEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_TechniqueRegisterEdit.Glyph")));
             this.barBtn_UC_TechniqueRegisterEdit.Id = 8;
             this.barBtn_UC_TechniqueRegisterEdit.Name = "barBtn_UC_TechniqueRegisterEdit";
             this.barBtn_UC_TechniqueRegisterEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_TechniqueRegisterEdit_ItemClick);
@@ -148,8 +150,8 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_TechniqueEvaluate);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_TechniqueCatalog);
             this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_TechniqueEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_TechniqueCatalog);
             this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_UC_TechniqueRegister);
             this.ribbonPageGroup1.ItemLinks.Add(this.barBtn_UC_TechniqueRegisterEdit);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";

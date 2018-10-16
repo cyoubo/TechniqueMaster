@@ -36,6 +36,8 @@ namespace TechniqueMaster
 
         public void onInitialUI()
         {
+            this.Text = "技能学习助手";
+            this.ShowIcon = false;
             tabhelper.ClearTabPage();
         }
 
@@ -65,7 +67,7 @@ namespace TechniqueMaster
 
         private void barBtn_UC_TechniqueLogEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            UC_TechniqueLogEdit uc = new UC_TechniqueLogEdit();
+            UC_TechniqueLogInsert uc = new UC_TechniqueLogInsert();
             tabhelper.AddorShowTabPage(barBtn_UC_TechniqueLogEdit.Caption, uc);
         }
 

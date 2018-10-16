@@ -62,15 +62,15 @@ namespace TechniqueMaster.Module_Technique.Controller
 
         public bool ShiftMissionStatus(long targetID, MissionStatusEnum missionStatusEnum, DateTime date)
         {
-            TB_TechniqueMission tech = QueryEntryByID((int)targetID);
-            tech.WhereExpression = TB_TechniqueMissionSet.ID.Equal(targetID);
-            tech.Status = new EnumUtils().GetEnumdescription(missionStatusEnum);
+            TB_TechniqueMission mission = QueryEntryByID((int)targetID);
+            mission.WhereExpression = TB_TechniqueMissionSet.ID.Equal(targetID);
+            mission.Status = new EnumUtils().GetEnumdescription(missionStatusEnum);
             if (missionStatusEnum == MissionStatusEnum.Finish)
             {
-                if (string.IsNullOrEmpty(tech.FinishDate))
-                    tech.FinishDate = FormatDate(date);
+                if (string.IsNullOrEmpty(mission.FinishDate))
+                    mission.FinishDate = FormatDate(date);
             }
-            return UpdateEntryByID(tech);
+            return UpdateEntryByID(mission);
         }
 
         internal bool IsSubMissionFinish(int p)
