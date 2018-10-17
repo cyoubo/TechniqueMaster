@@ -218,7 +218,6 @@
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -247,7 +246,7 @@
     <Folder Include="Module_Technique\Manager\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
+    <ProjectReference Include="..\..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
       <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
       <Name>PS.Plot.FrameBasic</Name>
     </ProjectReference>
