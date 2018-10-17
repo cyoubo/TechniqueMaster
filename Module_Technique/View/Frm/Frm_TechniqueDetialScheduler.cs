@@ -45,7 +45,6 @@ namespace TechniqueMaster.Module_Technique.View.Frm
         public void onInitialUI()
         {
             this.schedulerStorage1.Appointments.Clear();
-
             foreach (var missionItem in controller_mission.QueryEntriesByTechniquID(CurrentTechID))
             {
                 foreach (var logItem in controller_log.QueryEntiesByMissionID((int)missionItem.ID))

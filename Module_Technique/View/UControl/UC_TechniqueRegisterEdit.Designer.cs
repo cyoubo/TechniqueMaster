@@ -38,6 +38,8 @@
             this.cmb_Tech = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -49,8 +51,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tv_Intro.Properties)).BeginInit();
@@ -62,6 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Tech.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -73,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -157,6 +157,7 @@
             this.cmb_Tech.Name = "cmb_Tech";
             this.cmb_Tech.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_Tech.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmb_Tech.Size = new System.Drawing.Size(1110, 28);
             this.cmb_Tech.StyleController = this.layoutControl1;
             this.cmb_Tech.TabIndex = 6;
@@ -179,6 +180,18 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // repo_HLE_Edit
+            // 
+            this.repo_HLE_Edit.AutoHeight = false;
+            this.repo_HLE_Edit.Name = "repo_HLE_Edit";
+            this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
+            // 
+            // repo_HLE_Delete
+            // 
+            this.repo_HLE_Delete.AutoHeight = false;
+            this.repo_HLE_Delete.Name = "repo_HLE_Delete";
+            this.repo_HLE_Delete.Click += new System.EventHandler(this.repo_HLE_Delete_Click);
             // 
             // layoutControlGroup1
             // 
@@ -288,18 +301,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(1059, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // repo_HLE_Edit
-            // 
-            this.repo_HLE_Edit.AutoHeight = false;
-            this.repo_HLE_Edit.Name = "repo_HLE_Edit";
-            this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
-            // 
-            // repo_HLE_Delete
-            // 
-            this.repo_HLE_Delete.AutoHeight = false;
-            this.repo_HLE_Delete.Name = "repo_HLE_Delete";
-            this.repo_HLE_Delete.Click += new System.EventHandler(this.repo_HLE_Delete_Click);
-            // 
             // UC_TechniqueRegisterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -319,6 +320,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Tech.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -330,8 +333,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
             this.ResumeLayout(false);
 
         }

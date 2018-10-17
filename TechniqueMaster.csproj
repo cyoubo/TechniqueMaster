@@ -88,6 +88,12 @@
     <Compile Include="Module_System\View\Form\Frm_DataBaseConnect.designer.cs">
       <DependentUpon>Frm_DataBaseConnect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.Designer.cs">
+      <DependentUpon>UC_DBConnectEdit_SQLite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueEvaluationAdapter.cs" />
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="Module_System\View\Form\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.resx">
+      <DependentUpon>UC_DBConnectEdit_SQLite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.resx">
       <DependentUpon>Frm_TechniqueDetialScheduler.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +218,7 @@
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -234,7 +244,6 @@
   <ItemGroup>
     <Folder Include="Module_System\Componet\Adapter\" />
     <Folder Include="Module_System\Controller\" />
-    <Folder Include="Module_System\View\UControl\" />
     <Folder Include="Module_Technique\Manager\" />
   </ItemGroup>
   <ItemGroup>

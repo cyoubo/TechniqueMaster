@@ -34,6 +34,18 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
             onCreateDataColumn(Op_Detail);
         }
     }
+
+    public class TB_TechniqueBuilder2 : TB_TechniqueBuilder
+    {
+        public readonly string CatalogName = "类别名称";
+
+        protected override void AddDataColumn()
+        {
+            base.AddDataColumn();
+            onCreateDataColumn(CatalogName);
+        }
+    }
+
     public class TB_TechniqueAdapter : ScanGridControlAdapter<TB_Technique>
     {
         public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_Technique t)
@@ -50,5 +62,30 @@ namespace TechniqueMaster.Module_Technique.Componet.Adapter
             tempRow[targetBuilder.Op_Edit] = targetBuilder.Op_Edit;
             tempRow[targetBuilder.Op_Detail] = targetBuilder.Op_Detail;
         }
+    }
+
+    public class TB_TechniqueAdapter2 : TB_TechniqueAdapter
+    {
+        public override void onPrepareCreated(System.Data.DataTable m_ResultTable, BaseDataTableBuilder m_TableBuilder)
+        {
+            base.onPrepareCreated(m_ResultTable, m_TableBuilder);
+            foreach (var item in new TechniqueMaster.Module_Technique.Controller.TechniqueCatalogController().TravleAllEntities())
+                AddTempParams(""+item.ID, item.Name);
+        }
+
+        public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_Technique t)
+        {
+            base.onCreateDataRow(ref tempRow, builder, RowIndex, t);
+            if (builder is TB_TechniqueBuilder2)
+            {
+                tempRow[(builder as TB_TechniqueBuilder2).CatalogName] = m_TempParams["" + t.CatalogID];
+            }
+        }
+
+        public override void onFinishRowsCreated(System.Data.DataTable m_ResultTable)
+        {
+            base.onFinishRowsCreated(m_ResultTable);
+            m_TempParams.Clear();
+        }
     }
 }

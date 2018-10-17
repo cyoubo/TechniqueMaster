@@ -73,14 +73,15 @@ namespace TechniqueMaster.Module_Technique.Controller
             return UpdateEntryByID(mission);
         }
 
-        internal bool IsSubMissionFinish(int p)
+        public bool IsSubMissionFinish(int techniqueID)
         {
-            throw new NotImplementedException();
+            string str_Finish = new EnumUtils().GetEnumdescription(MissionStatusEnum.Finish);
+            return ExistByWhereCaluse(TB_TechniqueMissionSet.TechniqueID.Equal(techniqueID).And(TB_TechniqueMissionSet.Status.NotEqual(str_Finish)));
         }
 
-        internal bool HasSubMission(int p)
+        public bool ExistByTechniqueID(int techniqueID)
         {
-            throw new NotImplementedException();
+            return ExistByWhereCaluse(TB_TechniqueMissionSet.TechniqueID.Equal(techniqueID));
         }
     }
 }

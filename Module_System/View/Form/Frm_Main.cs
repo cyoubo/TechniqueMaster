@@ -86,7 +86,7 @@ namespace TechniqueMaster
         private void barBtn_UC_TechniqueRegisterEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UC_TechniqueRegisterEdit uc = new UC_TechniqueRegisterEdit();
-            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueRegister.Caption, uc);
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueRegisterEdit.Caption, uc);
         }
     }
 }

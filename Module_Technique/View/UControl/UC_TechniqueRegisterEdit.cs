@@ -66,9 +66,17 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             if (adapter != null)
                 adapter.NotifyClearTable();
 
-            adapter.Initial(controller.QueryEntryByTechniqueID(targetID), builder);
-            adapter.NotifyfreshDataTable();
+            adapter.Initial(builder);
+            adapter.NotifyfreshDataTable(controller.QueryEntryByTechniqueID(targetID));
             gridHelper.GridControl.DataSource = adapter.ResultTable;
+            gridHelper.SetAllColumnEditable(false);
+            gridHelper.SetCellResposity(builder.Op_Delete, this.repo_HLE_Delete);
+            gridHelper.SetCellResposity(builder.Op_Edit, this.repo_HLE_Edit);
+            gridHelper.SetColunmOption(builder.ID, false, false);
+            gridHelper.SetColunmOption(builder.TechniqueID, false, false);
+            gridHelper.SetColMaxWidth(builder.Date, 120);
+            gridHelper.SetColMaxWidth(builder.Op_Delete, 80);
+            gridHelper.SetColMaxWidth(builder.Op_Edit, 80);
         }
 
         private void onFillInputValue()

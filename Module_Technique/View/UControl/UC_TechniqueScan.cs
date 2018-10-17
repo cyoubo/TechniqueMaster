@@ -22,8 +22,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 {
     public partial class UC_TechniqueScan : DevExpress.XtraEditors.XtraUserControl,IInitialUI
     {
-        private TB_TechniqueBuilder builder_tech;
-        private TB_TechniqueAdapter adapter_tech;
+        private TB_TechniqueBuilder2 builder_tech;
+        private TB_TechniqueAdapter2 adapter_tech;
         private TechniqueController controller_tech;
         private GridControlHelper gridhelper_tech;
 
@@ -52,8 +52,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 
         public void onCreateComponet()
         {
-            builder_tech = new TB_TechniqueBuilder();
-            adapter_tech = new TB_TechniqueAdapter();
+            builder_tech = new TB_TechniqueBuilder2();
+            adapter_tech = new TB_TechniqueAdapter2();
             controller_tech = new TechniqueController();
             gridhelper_tech = new GridControlHelper(gridView_Technique, gridControl_Technique);
 
@@ -68,6 +68,12 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             gridhelper_log = new GridControlHelper(gridView_log, gridControl_log);
 
             controller_Evaluate = new TechniqueEvaluationController();
+
+            cmb_catalog.Properties.Items.Add("技术状态");
+            cmb_catalog.Properties.Items.Add("技术类别");
+            cmb_catalog.Properties.Items.Add("兴趣度");
+            cmb_catalog.Properties.Items.Add("不分组");
+            cmb_catalog.SelectedIndex = 3;
         }
 
         public void onInitialUI()
@@ -125,6 +131,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             gridhelper_log.SetColMaxWidth(builder_log.LogUrl, 100);
 
             btn_showInCanlender.Enabled = controller_tech.CurrentID != 0;
+
+            
         }
 
         private void gridView_Technique_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -159,6 +167,8 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             adapter_mission.NotifyfreshDataTable(controller_mission.QueryEntriesByTechniquID(controller_tech.CurrentID));
             gridhelper_mission.GridControl.DataSource = adapter_mission.ResultTable;
             gridhelper_mission.GridView.ExpandAllGroups();
+
+            btn_showInCanlender.Enabled = controller_tech.CurrentID != 0;
         }
 
         private void repo_HLE_detail_Click(object sender, EventArgs e)
@@ -182,6 +192,30 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             frm.CurrentTechID = controller_tech.CurrentID;
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+        }
+
+        private void cmb_catalog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (gridhelper_tech.DataTableSource == null)
+                return;
+
+            gridhelper_tech.SetAllColumnVisible(false);
+
+            if (cmb_catalog.SelectedIndex == 3)
+            {
+                gridhelper_tech.UnGroup();
+                gridhelper_tech.SetAllColumnVisible(false);
+            }
+            if (cmb_catalog.SelectedIndex == 0)
+                gridhelper_tech.Group(builder_tech.Status);
+            if (cmb_catalog.SelectedIndex == 1)
+                gridhelper_tech.Group(builder_tech.CatalogName);
+            if (cmb_catalog.SelectedIndex == 2)
+                gridhelper_tech.Group(builder_tech.Interest);
+
+            gridhelper_tech.SetColunmOption(builder_tech.Name, false, true);
+            gridhelper_tech.GridView.GroupFormat = "{1}";
+            gridhelper_tech.GridView.ExpandAllGroups();
         }
 
 

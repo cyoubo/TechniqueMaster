@@ -50,6 +50,8 @@ namespace TechniqueMaster.Module_Technique.View.Frm
             tv_MissionName.Properties.ReadOnly = IsReadOnly;
             tv_URL.Properties.ReadOnly = IsReadOnly;
             dateE_Date.ReadOnly = IsReadOnly;
+            btn_delete.Enabled = !IsReadOnly;
+            btn_sure.Enabled = !IsReadOnly;
         }
 
         public void onExtractInputValue()

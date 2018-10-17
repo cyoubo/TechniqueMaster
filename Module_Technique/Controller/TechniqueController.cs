@@ -12,7 +12,7 @@ using TechniqueMaster.Module_Technique.Componet.Enum;
 
 namespace TechniqueMaster.Module_Technique.Controller
 {
-    public class TechniqueController : ManageBaseController<TB_Technique>
+    public class TechniqueController : ManageBaseController2<TB_Technique,TB_TechniqueSet>
     {
 
         public TechniqueController()
@@ -40,10 +40,9 @@ namespace TechniqueMaster.Module_Technique.Controller
             return TB_TechniqueSet.ID.Equal(entry);
         }
 
-        public static bool IsExitCatalogIDReference(int currentID)
+        public bool ExsitByCatalogID(int catalogID)
         {
-            return false;
-            //return new TechniqueController().ExsitByID<TB_TechniqueSet>(currentID);
+            return ExistByWhereCaluse(TB_TechniqueSet.CatalogID.Equal(catalogID));
         }
 
         public static long ExtractID(object p)

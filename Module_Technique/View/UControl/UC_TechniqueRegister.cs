@@ -157,7 +157,7 @@ namespace TechniqueMaster.Module_Technique.View.UControl
         {
             TechniqueMisssionController controller = new TechniqueMisssionController();
             //当前技术下有对应的任务
-            if(controller.HasSubMission(controller_tech.CurrentID))
+            if(controller.ExistByTechniqueID(controller_tech.CurrentID))
             {
                 //如果是finish,则需要检验下属的任务是否都完成了
                 if (controller.IsSubMissionFinish(controller_tech.CurrentID))

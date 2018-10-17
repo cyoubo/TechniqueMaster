@@ -27,6 +27,11 @@ namespace TechniqueMaster.Module_Technique.View.UControl
         private GridControlHelper gridHelper;
         private RadioGroupHelper rgHelper;
 
+        private TB_TechniqueLogAdapter adapter_log;
+        private TB_TechniqueLogBuilder builder_log;
+        private TechniqueLogController controller_log;
+        private GridControlHelper gridHelper_log;
+
         public UC_TechniqueMission()
         {
             InitializeComponent();
@@ -45,6 +50,11 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             controller = new TechniqueMisssionController();
             gridHelper = new GridControlHelper(this.gridView_Mission,gridControl_Mission);
             rgHelper = new RadioGroupHelper(this.rg_Status);
+
+            builder_log = new TB_TechniqueLogBuilder();
+            adapter_log = new TB_TechniqueLogAdapter();
+            gridHelper_log = new GridControlHelper(this.gridView_log, gridControl_log);
+            controller_log = new TechniqueLogController();
         }
 
         public void onInitialUI()
@@ -82,6 +92,30 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             gridHelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);
             gridHelper.SetColMaxWidth(builder.Op_Delete, 40);
             gridHelper.SetColMaxWidth(builder.Op_Edit, 40);
+            gridHelper.Group(builder.Status);
+            gridHelper.GridView.ExpandAllGroups();
+            gridHelper.GridView.GroupFormat = "{1}";
+        }
+
+        private void onFillLogTableGrid(int missionID)
+        {
+            if (adapter_log != null)
+            {
+                adapter_log.NotifyClearTable();
+                adapter_log.NotifyDestoryTable();
+            }
+            adapter_log.Initial(builder_log);
+            adapter_log.NotifyfreshDataTable(controller_log.QueryEntiesByMissionID(missionID));
+            gridHelper_log.GridControl.DataSource = adapter_log.ResultTable;
+            gridHelper_log.SetAllColumnEditable(false);
+            gridHelper_log.SetColunmOption(builder_log.ID, false, false);
+            gridHelper_log.SetColunmOption(builder_log.MissionID, false, false);
+            gridHelper_log.SetColunmOption(builder_log.Op_Delete, false, false);
+            gridHelper_log.SetColunmOption(builder_log.Op_Edit, false, false);
+            gridHelper_log.SetColunmOption(builder_log.MissionName, false, false);
+            gridHelper_log.SetColunmOption(builder_log.TechName, false, false);
+            gridHelper_log.SetColMaxWidth(builder_log.Date, 120);
+            gridHelper_log.SetColMaxWidth(builder_log.LogUrl, 100);
         }
 
         private void onFillInputValue()
@@ -197,15 +231,26 @@ namespace TechniqueMaster.Module_Technique.View.UControl
 
         private void repo_HLE_Edit_Click(object sender, EventArgs e)
         {
+            onSetInputEnable(true);
+        }
+
+        private void gridView_Mission_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
             controller.CurrentID = gridHelper.getFocuseRowCellValue_Int(builder.ID);
             controller.LoadEntry();
             onFillInputValue();
-            onSetInputEnable(true);
+            onFillLogTableGrid(controller.CurrentID);
         }
 
         private void cmb_Tech_SelectedIndexChanged(object sender, EventArgs e)
         {
             onFillMissionTableGrid();
+        }
+
+        private void rg_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rg_Status.SelectedIndex != 2)
+                dateE_Finish.Text = "";
         }
     }
 }

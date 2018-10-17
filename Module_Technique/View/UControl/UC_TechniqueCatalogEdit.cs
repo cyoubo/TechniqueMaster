@@ -47,7 +47,7 @@ namespace TechniqueMaster.Module_Technique.View.UControl
             adapter.NotifyfreshDataTable();
 
             gridhelper.GridControl.DataSource = adapter.ResultTable;
-            gridhelper.SetColunmOption(builder.ID, false, true);
+            gridhelper.SetColunmOption(builder.ID, false, false);
             gridhelper.SetColunmOption(builder.Name, false, true);
             gridhelper.SetColunmOption(builder.Description, false, true);
             gridhelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);
@@ -84,7 +84,7 @@ namespace TechniqueMaster.Module_Technique.View.UControl
         private void repo_HLE_Delete_Click(object sender, EventArgs e)
         {
            int currentID = gridhelper.getFocuseRowCellValue_Int(builder.ID);
-           if (TechniqueController.IsExitCatalogIDReference(currentID))
+           if (new TechniqueController().ExsitByCatalogID(currentID))
            {
                MessageBoxHelper.ShowErrorDialog("当前技术类型已经被使用,请删除后重试...");
                return;
