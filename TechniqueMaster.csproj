@@ -11,6 +11,21 @@
     <AssemblyName>TechniqueMaster</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Aspose.Words.dll</HintPath>
     </Reference>
+    <Reference Include="Bmob-Windows, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Bmob-Windows.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -46,6 +65,8 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
@@ -93,6 +114,63 @@
     </Compile>
     <Compile Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.Designer.cs">
       <DependentUpon>UC_DBConnectEdit_SQLite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\BombCloud\BaseBmobController.cs" />
+    <Compile Include="Module_TechniqueBomb\BombCloud\BmobIntance.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueAdapter.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueCategoryAdapter.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\Enum\TechniqueStatusEnum.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueMissionAdapter.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueLogAdapter.cs" />
+    <Compile Include="Module_TechniqueBomb\Controller\TechniqueCategoryController.cs" />
+    <Compile Include="Module_TechniqueBomb\Controller\TechniqueController.cs" />
+    <Compile Include="Module_TechniqueBomb\Controller\TechniqueLogController.cs" />
+    <Compile Include="Module_TechniqueBomb\Controller\TechniqueMissionController.cs" />
+    <Compile Include="Module_TechniqueBomb\Model\TB_Technique.cs" />
+    <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueCategory.cs" />
+    <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueLog.cs" />
+    <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueMission.cs" />
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogInput.Designer.cs">
+      <DependentUpon>Frm_TechniqueLogInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogUpdate.Designer.cs">
+      <DependentUpon>Frm_TechniqueLogUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueMissionStateUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueMissionStateUpdate.Designer.cs">
+      <DependentUpon>Frm_TechniqueMissionStateUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueCategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueMissionEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
@@ -188,6 +266,27 @@
     <EmbeddedResource Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.resx">
       <DependentUpon>UC_DBConnectEdit_SQLite.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogInput.resx">
+      <DependentUpon>Frm_TechniqueLogInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogUpdate.resx">
+      <DependentUpon>Frm_TechniqueLogUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueMissionStateUpdate.resx">
+      <DependentUpon>Frm_TechniqueMissionStateUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.resx">
+      <DependentUpon>UC_TechniqueCategoryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueEdit.resx">
+      <DependentUpon>UC_TechniqueEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogEdit.resx">
+      <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.resx">
+      <DependentUpon>UC_TechniqueMissionEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.resx">
       <DependentUpon>Frm_TechniqueDetialScheduler.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +317,7 @@
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -250,6 +350,26 @@
       <Project>{db82e8dc-bd52-4d04-8db9-dfe9689931fe}</Project>
       <Name>PS.Plot.FrameBasic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bmob-Windows.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

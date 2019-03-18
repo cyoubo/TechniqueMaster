@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechniqueMaster.Module_Technique.View.UControl;
+using TechniqueMaster.Module_TechniqueBomb.BombCloud;
+using TechniqueMaster.Module_TechniqueBomb.View.UControl;
 
 namespace TechniqueMaster
 {
@@ -32,6 +34,8 @@ namespace TechniqueMaster
         {
             tabhelper = new TabControlHelper(tab_Control);
             tabhelper.RegistCloseEventListener();
+
+            BmobIntance.Create().InitialBomb();
         }
 
         public void onInitialUI()
@@ -87,6 +91,30 @@ namespace TechniqueMaster
         {
             UC_TechniqueRegisterEdit uc = new UC_TechniqueRegisterEdit();
             tabhelper.AddorShowTabPage(barBtn_UC_TechniqueRegisterEdit.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueLog_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueLogEdit uc = new UC_TechniqueLogEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueLog.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueCategoryEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueCategoryEdit uc = new UC_TechniqueCategoryEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueCategoryEdit.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueEdit uc = new UC_TechniqueEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueEdit.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueMissionEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueMissionEdit uc = new UC_TechniqueMissionEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueMissionEdit.Caption, uc);
         }
     }
 }

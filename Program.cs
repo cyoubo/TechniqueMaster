@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.LookAndFeel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace TechniqueMaster
         [STAThread]
         static void Main()
         {
+            //修改主题皮肤
+            UserLookAndFeel.Default.SetSkinStyle("Office 2013");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Main());
