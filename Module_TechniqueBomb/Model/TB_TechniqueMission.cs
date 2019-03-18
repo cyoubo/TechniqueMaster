@@ -60,7 +60,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
 
         public bool IsInvailDate()
         {
-            return DateTime.Parse(FinishDate.iso).Year > 2200;
+            return FinishDate == null || DateTime.Parse(FinishDate.iso).Year > 2200;
         }
     }
 }
