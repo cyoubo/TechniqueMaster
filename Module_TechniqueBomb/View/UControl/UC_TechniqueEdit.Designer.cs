@@ -51,9 +51,9 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repo_HLE_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repo_HLE_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.repo_HLE_UpdateState = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repo_HLE_UpdateState = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -81,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_UpdateState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_UpdateState)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -119,7 +119,7 @@
             // trackBar
             // 
             this.trackBar.EditValue = null;
-            this.trackBar.Location = new System.Drawing.Point(37, 334);
+            this.trackBar.Location = new System.Drawing.Point(37, 277);
             this.trackBar.Name = "trackBar";
             this.trackBar.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.trackBar.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -133,7 +133,7 @@
             // 
             // btn_sure
             // 
-            this.btn_sure.Location = new System.Drawing.Point(241, 409);
+            this.btn_sure.Location = new System.Drawing.Point(241, 471);
             this.btn_sure.Name = "btn_sure";
             this.btn_sure.Size = new System.Drawing.Size(74, 32);
             this.btn_sure.StyleController = this.layoutControl1;
@@ -144,7 +144,7 @@
             // dateE_CreateDate
             // 
             this.dateE_CreateDate.EditValue = null;
-            this.dateE_CreateDate.Location = new System.Drawing.Point(37, 273);
+            this.dateE_CreateDate.Location = new System.Drawing.Point(37, 216);
             this.dateE_CreateDate.Name = "dateE_CreateDate";
             this.dateE_CreateDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -156,9 +156,9 @@
             // 
             // tv_Description
             // 
-            this.tv_Description.Location = new System.Drawing.Point(37, 216);
+            this.tv_Description.Location = new System.Drawing.Point(37, 379);
             this.tv_Description.Name = "tv_Description";
-            this.tv_Description.Size = new System.Drawing.Size(278, 24);
+            this.tv_Description.Size = new System.Drawing.Size(278, 86);
             this.tv_Description.StyleController = this.layoutControl1;
             this.tv_Description.TabIndex = 6;
             // 
@@ -197,9 +197,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 448);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 510);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(322, 238);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(322, 176);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
@@ -208,14 +208,14 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
             this.emptySpaceItem2,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem6,
+            this.layoutControlItem5});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 5;
-            this.layoutControlGroup3.Size = new System.Drawing.Size(322, 448);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(322, 510);
             this.layoutControlGroup3.Text = "技能信息";
             // 
             // layoutControlItem1
@@ -241,9 +241,9 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tv_Description;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 122);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 285);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(284, 57);
+            this.layoutControlItem3.Size = new System.Drawing.Size(284, 119);
             this.layoutControlItem3.Text = "技能描述";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 22);
@@ -251,7 +251,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.dateE_CreateDate;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 179);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 122);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(284, 61);
             this.layoutControlItem5.Text = "创建日期";
@@ -261,7 +261,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.trackBar;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 183);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(284, 102);
             this.layoutControlItem6.Text = "兴趣度";
@@ -271,7 +271,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 342);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 404);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(204, 38);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -280,7 +280,7 @@
             // 
             this.layoutControlItem7.Control = this.btn_sure;
             this.layoutControlItem7.FillControlToClientArea = false;
-            this.layoutControlItem7.Location = new System.Drawing.Point(204, 342);
+            this.layoutControlItem7.Location = new System.Drawing.Point(204, 404);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(80, 38);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -333,6 +333,12 @@
             this.repo_HLE_Edit.Name = "repo_HLE_Edit";
             this.repo_HLE_Edit.Click += new System.EventHandler(this.repo_HLE_Edit_Click);
             // 
+            // repo_HLE_UpdateState
+            // 
+            this.repo_HLE_UpdateState.AutoHeight = false;
+            this.repo_HLE_UpdateState.Name = "repo_HLE_UpdateState";
+            this.repo_HLE_UpdateState.Click += new System.EventHandler(this.repo_HLE_UpdateState_Click);
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -353,12 +359,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(1052, 686);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // repo_HLE_UpdateState
-            // 
-            this.repo_HLE_UpdateState.AutoHeight = false;
-            this.repo_HLE_UpdateState.Name = "repo_HLE_UpdateState";
-            this.repo_HLE_UpdateState.Click += new System.EventHandler(this.repo_HLE_UpdateState_Click);
             // 
             // UC_TechniqueEdit
             // 
@@ -395,9 +395,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_Edit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_UpdateState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_UpdateState)).EndInit();
             this.ResumeLayout(false);
 
         }

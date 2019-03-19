@@ -61,10 +61,11 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             return FindByQuery(query, 2).Count != 0;
         }
 
-        internal IList<TB_TechniqueLog> FindByMissionID(string missionID)
+        internal IList<TB_TechniqueLog> FindByMissionID(string missionID, bool SortDatedesc = true)
         {
             BmobQuery query = new BmobQuery();
             query.WhereEqualTo("MissionID", missionID);
+            query.OrderByDescending("Date");
             return FindByQuery(query);
         }
     }

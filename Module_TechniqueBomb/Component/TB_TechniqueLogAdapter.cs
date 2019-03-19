@@ -15,18 +15,21 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 	{
 
         public readonly string ID = "objectId";
-		public readonly string MissionID = "MissionID";
-		public readonly string Date = "Date";
-		public readonly string Context = "Context";
-		public readonly string LogUrl = "LogUrl";
+		public readonly string MissionID = "任务编号";
+		public readonly string Date = "等级日期";
+		public readonly string Context = "日志内容";
+		public readonly string LogUrl = "笔记连接";
 		public readonly string Op_Delete = "删除";
-		protected override void AddDataColumn()
+        public readonly string IsNeedTidy = "亟待整理";
+		
+        protected override void AddDataColumn()
 		{
             onCreateDataColumn(ID);
 			onCreateDataColumn(MissionID);
 			onCreateDataColumn(Date);
 			onCreateDataColumn(Context);
 			onCreateDataColumn(LogUrl);
+            onCreateDataColumn(IsNeedTidy);
 			onCreateDataColumn(Op_Delete);
 		}
 
@@ -45,6 +48,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			tempRow[targetBuilder.LogUrl] = t.LogUrl;
 			tempRow[targetBuilder.Op_Delete] = targetBuilder.Op_Delete;
             tempRow[targetBuilder.ID] = t.objectId;
+            tempRow[targetBuilder.IsNeedTidy] = t.IsNeedTidy;
 		}
 
         public override TB_TechniqueLog onDesrialize(BaseDataTableBuilder builder, System.Data.DataRow row)
@@ -57,6 +61,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			tempBean.Context = row[targetBuilder.Context].ToString();
 			tempBean.LogUrl = row[targetBuilder.LogUrl].ToString();
             tempBean.objectId = row[targetBuilder.ID].ToString();
+            tempBean.IsNeedTidy.Set(Boolean.Parse(row[targetBuilder.ID].ToString()));
 			return tempBean;
 		}
 
@@ -76,6 +81,10 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             result.Date = LogDate;
             if(string.IsNullOrEmpty(row[targetBuilder.ID].ToString())   ==false)
                 result.objectId = row[targetBuilder.ID].ToString();
+            if (string.IsNullOrEmpty(row[targetBuilder.IsNeedTidy].ToString()) == false)
+                result.IsNeedTidy = (Boolean.Parse(row[targetBuilder.IsNeedTidy].ToString()));
+            else
+                result.IsNeedTidy = false;
             return result;
         }
     }

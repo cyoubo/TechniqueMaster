@@ -33,33 +33,17 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
 
         public IList<TB_TechniqueMission> FindUnFinishMission()
         {
-            IList<TB_TechniqueMission> data = new List<TB_TechniqueMission>();
-            try
-            {
-                BmobQuery query = new BmobQuery();
-                BmobQuery query2 = new BmobQuery();
-                query2.WhereEqualTo("FinishDate", null);
-                query.WhereLessThan("FinishDate", InvailDate).Or(query2);
-                query.Limit(1000);
-                var result = Bomb().FindTaskAsync<TB_TechniqueMission>(GetTableName(), query);
-                data = new List<TB_TechniqueMission>(result.Result.results);
-            }
-            catch (AggregateException ex)
-            {
-                ErrorMessage = ex.InnerException.Message;
-            }
-            catch (Exception ex2)
-            {
-                ErrorMessage = ex2.Message;
-            }
-            return data;
+            BmobQuery query = new BmobQuery();
+            query.WhereGreaterThanOrEqualTo("FinishDate", InvailDate);
+            query.Limit(1000);
+            return FindByQuery(query);
         }
 
         public IList<TB_TechniqueMission> FindMissionByTechniqueID(string TechniqueID)
         {
             BmobQuery query = new BmobQuery();
             query.WhereEqualTo("TechniqueID", TechniqueID);
-            return FindByQuery(query, 2);
+            return FindByQuery(query);
         }
 
         public bool ExistTechniqueID(string techniqueObjectID)

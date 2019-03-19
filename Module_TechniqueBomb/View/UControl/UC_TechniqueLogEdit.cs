@@ -77,9 +77,20 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
                 appoint.Start = DateTime.Parse(item.Date.iso).Date;
                 appoint.Subject = item.Context;
                 appoint.SetId(item.objectId);
+                appoint.LabelKey = item.IsNeedTidy.Get() ? 10 : 0;
                 this.schedulerStorage1.Appointments.Add(appoint);
             }
             this.schedulerControl1.Start = dateE_Start.DateTime;
+        }
+
+        private void schedulerControl1_CustomDrawAppointmentBackground(object sender, CustomDrawObjectEventArgs e)
+        {
+           
+        }
+
+        private void schedulerControl1_CustomDrawAppointment(object sender, CustomDrawObjectEventArgs e)
+        {
+            
         }
 
 

@@ -17,6 +17,8 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
 
         public string LogUrl { get; set; }
 
+        public BmobBoolean IsNeedTidy { get; set; }
+
         public override void readFields(BmobInput input)
         {
             base.readFields(input);
@@ -25,6 +27,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
             Date = input.getDate("Date");
             Context = input.getString("Context");
             LogUrl = input.getString("LogUrl");
+            IsNeedTidy = input.getBoolean("IsNeedTidy");
         }
 
         public override void write(BmobOutput output, bool all)
@@ -35,6 +38,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
             output.Put("Date", Date);
             output.Put("Context", Context);
             output.Put("LogUrl", LogUrl);
+            output.Put("IsNeedTidy", IsNeedTidy);
         }
     }
 }

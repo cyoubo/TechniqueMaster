@@ -1,4 +1,5 @@
-﻿using OfficeAider.Module_Technique.View.Form;
+﻿using DevExpress.XtraBars.Ribbon;
+using OfficeAider.Module_Technique.View.Form;
 using PS.Plot.FrameBasic.Module_Common.Interface;
 using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools;
 using System;
@@ -16,7 +17,7 @@ using TechniqueMaster.Module_TechniqueBomb.View.UControl;
 
 namespace TechniqueMaster
 {
-    public partial class Frm_Main : Form, IInitialUI
+    public partial class Frm_Main : RibbonForm, IInitialUI
     {
         private TabControlHelper tabhelper;
         

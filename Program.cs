@@ -16,6 +16,8 @@ namespace TechniqueMaster
         static void Main()
         {
             //修改主题皮肤
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
 
             Application.EnableVisualStyles();

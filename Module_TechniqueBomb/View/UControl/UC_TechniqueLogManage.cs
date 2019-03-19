@@ -53,18 +53,22 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             GridBand band_Date = new GridBand() {Caption = "日期"};
             GridBand band_Info = new GridBand() {Caption = "信息"};
             GridBand band_Op = new GridBand() { Caption = "操作" };
+            GridBand band_ID = new GridBand() { Caption = "ID", Visible = false };
             this.advBandedGridView1.Bands.Clear();
-            this.advBandedGridView1.Bands.AddRange(new GridBand[]{band_Date,band_Info,band_Op});
+            this.advBandedGridView1.Bands.AddRange(new GridBand[] { band_ID, band_Date, band_Info, band_Op });
 
+            
             BandedGridColumn col_Date = new BandedGridColumn { FieldName = builder_Log.Date, Visible = true };
             BandedGridColumn col_Context = new BandedGridColumn { FieldName = builder_Log.Context, Visible = true };
             BandedGridColumn col_Url = new BandedGridColumn { FieldName = builder_Log.LogUrl, Visible = true };
             BandedGridColumn col_OpDelete = new BandedGridColumn { FieldName = builder_Log.Op_Delete, Visible = true };
+            BandedGridColumn col_ID = new BandedGridColumn { FieldName = builder_Log.ID, Visible = false };
             
             UpdateColumnOption(col_Date, band_Date, false, true, 0);
             UpdateColumnOption(col_Context, band_Info, false, false, 0);
             UpdateColumnOption(col_Url, band_Info, false, false, 1);
             UpdateColumnOption(col_OpDelete, band_Op, false, true, 0);
+            UpdateColumnOption(col_ID, band_ID, false, true, 0);
 
             advBandedGridView1.OptionsView.ColumnAutoWidth = true;
             advBandedGridView1.OptionsView.ShowBands = false;

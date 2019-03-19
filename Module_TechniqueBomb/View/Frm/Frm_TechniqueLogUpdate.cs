@@ -44,6 +44,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
             tv_Context.Text = controller.Entry.Context;
             tv_Url.Text = controller.Entry.LogUrl;
             tv_date.Text = TechniqueLogController.FormatBmobDate(controller.Entry.Date);
+            tgS_IsNeedTidy.IsOn = controller.Entry.IsNeedTidy.Get();
 
             TB_TechniqueMissionAdapter missionAdapter = new TB_TechniqueMissionAdapter();
             TB_TechniqueMissionBuilder missionBuilder = new TB_TechniqueMissionBuilder();
@@ -73,6 +74,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
             controller.Entry.MissionID = sle_Mission.EditValue.ToString();
             controller.Entry.Context = tv_Context.Text;
             controller.Entry.LogUrl = tv_Url.Text;
+            controller.Entry.IsNeedTidy = tgS_IsNeedTidy.IsOn;
 
             if (controller.UpdateEntry())
             {

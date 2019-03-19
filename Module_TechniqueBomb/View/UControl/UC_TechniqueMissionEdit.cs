@@ -85,6 +85,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             controller.Entry.Description = tv_Description.Text;
             controller.Entry.CreateDate = dateE_Create.DateTime.Date;
             controller.Entry.TechniqueID = (cmb_Technique.SelectedItem as ComboxItem).Tag;
+            controller.Entry.FinishDate = TechniqueController.InvailDate;
         }
 
         public Validator onValidateInputValue()

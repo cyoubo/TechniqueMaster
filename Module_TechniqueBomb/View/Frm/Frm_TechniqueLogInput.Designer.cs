@@ -42,6 +42,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.repo_cke_Tidy = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_cke_Tidy)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -96,7 +98,8 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repo_search_TechMission});
+            this.repo_search_TechMission,
+            this.repo_cke_Tidy});
             this.gridControl1.Size = new System.Drawing.Size(1432, 329);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -203,6 +206,11 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(1278, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // repo_cke_Tidy
+            // 
+            this.repo_cke_Tidy.AutoHeight = false;
+            this.repo_cke_Tidy.Name = "repo_cke_Tidy";
+            // 
             // Frm_TechniqueLogInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -226,6 +234,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_cke_Tidy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +255,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repo_search_TechMission;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repo_cke_Tidy;
     }
 }

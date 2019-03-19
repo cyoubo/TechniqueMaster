@@ -53,7 +53,10 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
             gridHelper.AddNewRowInputCallBack(this);
             gridHelper.SetColMaxWidth(builder.Op_Delete, 80);
             gridHelper.SetColunmOption(builder.Date, false, false);
+            gridHelper.SetColunmOption(builder.ID, false, false);
             gridHelper.SetCellResposity(builder.MissionID, repo_search_TechMission);
+            gridHelper.SetCellResposity(builder.IsNeedTidy, repo_cke_Tidy);
+            
 
             controller = new TechniqueLogController();
         }
@@ -74,16 +77,19 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
                 repo_search_TechMission.View.Columns[index].Visible = false;
             repo_search_TechMission.View.Columns[missionBuilder.Name].Visible = true;
             repo_search_TechMission.View.Columns[missionBuilder.TechinqueName].Visible = true;
+            repo_search_TechMission.View.Columns[missionBuilder.TechinqueName].Group();
+            repo_search_TechMission.View.GroupFormat = "{1}";
+            repo_search_TechMission.View.ExpandAllGroups();
         }
 
         public void onExtractInputValue()
         {
-            throw new NotImplementedException();
+            
         }
 
         public PS.Plot.FrameBasic.Module_Common.Component.Validator onValidateInputValue()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void onNewRowAdded(GridControlHelper gridControlHelper, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
