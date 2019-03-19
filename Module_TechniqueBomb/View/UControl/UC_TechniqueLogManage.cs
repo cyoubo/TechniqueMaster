@@ -74,6 +74,10 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             band_Op.OptionsBand.FixedWidth = true;
 
             this.advBandedGridView1.Columns[builder_Log.Op_Delete].ColumnEdit = repo_HLE_delete;
+            this.advBandedGridView1.Columns[builder_Log.Op_Delete].OptionsColumn.AllowEdit = true;
+
+            this.advBandedGridView1.Columns[builder_Log.LogUrl].ColumnEdit = repo_HLE_gotoURL;
+            this.advBandedGridView1.Columns[builder_Log.LogUrl].OptionsColumn.AllowEdit = true;
         }
 
         public void onInitialUI()
