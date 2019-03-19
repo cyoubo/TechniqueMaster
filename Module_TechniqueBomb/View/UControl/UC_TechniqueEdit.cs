@@ -17,6 +17,7 @@ using PS.Plot.FrameBasic.Module_Common.Utils;
 using TechniqueMaster.Module_TechniqueBomb.Component.Enum;
 using PS.Plot.FrameBasic.Module_Common.Component;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
+using TechniqueMaster.Module_TechniqueBomb.View.Frm;
 
 namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 {
@@ -56,13 +57,22 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
             gridHelper.SetAllColumnEditable(false);
             gridHelper.SetColunmOption(builder.ID, false, false);
-            gridHelper.SetColunmOption(builder.Op_Edit, false, false);
-            gridHelper.SetColunmOption(builder.Op_Detail, false, false);
+            gridHelper.SetColunmOption(builder.Op_Edit, false, true);
+            gridHelper.SetColunmOption(builder.Op_UpdateState, false, false);
+            gridHelper.SetColunmOption(builder.Op_UpdateState, false, true);
             gridHelper.SetColunmOption(builder.CatalogID, false, false);
             gridHelper.SetColMaxWidth(builder.Op_Delete, 80);
+            gridHelper.SetColMaxWidth(builder.Op_Edit, 80);
+            gridHelper.SetColMaxWidth(builder.Op_UpdateState, 120);
             gridHelper.SetColMaxWidth(builder.Status, 80);
             gridHelper.SetColMaxWidth(builder.Interest, 80);
             gridHelper.SetColMaxWidth(builder.CreateDate, 120);
+            gridHelper.SetCellResposity(builder.Op_Delete, repo_HLE_Delete);
+            gridHelper.SetCellResposity(builder.Op_Edit, repo_HLE_Edit);
+            gridHelper.SetCellResposity(builder.Op_UpdateState, repo_HLE_UpdateState);
+            gridHelper.Group(builder.CatalogName);
+            gridHelper.GridView.ExpandAllGroups();
+            gridHelper.GridView.GroupFormat = "{1}";
 
             cmb_Category.Properties.Items.Clear();
             foreach (var item in new TechniqueCategoryController().Travels())
@@ -104,19 +114,32 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
             onExtractInputValue();
 
-            if (controller.InsertEntry())
+            if (string.IsNullOrEmpty(controller.CurrentObjectID))
             {
-                onInitialUI();
-                controller.ReleaseEntry();
+                if (controller.InsertEntry())
+                {
+                    onInitialUI();
+                    controller.ReleaseEntry();
+                }
+                else
+                    MessageBoxHelper.ShowCreateStateDialog(false, controller.ErrorMessage);
             }
             else
-                MessageBoxHelper.ShowCreateStateDialog(false, controller.ErrorMessage);
+            {
+                if (controller.UpdateEntry())
+                {
+                    onInitialUI();
+                    controller.ReleaseEntry();
+                }
+                else
+                    MessageBoxHelper.ShowUpdateStateDialog(false);
+            }
         }
 
         private void repo_HLE_Delete_Click(object sender, EventArgs e)
         {
             string techniqueObjectID = gridHelper.getFocuseRowCellValue_String(builder.ID);
-            if (controller.ExistSubTechniqueLog(techniqueObjectID))
+            if (controller.ExistSubTechnique(techniqueObjectID))
             {
                 MessageBoxHelper.ShowErrorDialog("请删除当前任务下属日志后重试");
                 return;
@@ -129,6 +152,29 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             }
             else
                 MessageBoxHelper.ShowErrorDialog("删除失败");
+        }
+
+        private void repo_HLE_Edit_Click(object sender, EventArgs e)
+        {
+            controller.CurrentObjectID = gridHelper.getFocuseRowCellValue_String(builder.ID);
+            controller.LoadEntry();
+
+            tv_Name.Text = controller.Entry.Name;
+            tv_Description.Text = controller.Entry.Description;
+            trackBar.Value = controller.Entry.Interest.Get();
+            dateE_CreateDate.DateTime = DateTime.Parse(controller.Entry.CreateDate.iso);
+            ControlAPI.SelectedComboxItemByComboxItem(this.cmb_Category, controller.Entry.ConvertToComboxItem());
+        }
+
+        private void repo_HLE_UpdateState_Click(object sender, EventArgs e)
+        {
+            Frm_TechniqueStateUpdate frm = new Frm_TechniqueStateUpdate();
+            frm.TechniqueID = gridHelper.getFocuseRowCellValue_String(builder.ID);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                controller.ReleaseEntry();
+                this.onInitialUI();
+            }
         }
     }
 }

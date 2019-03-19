@@ -43,11 +43,9 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             return result;
         }
 
-        internal bool ExistSubTechniqueLog(string p)
+        public bool ExistSubTechnique(string techniqueObjectID)
         {
-            return true;
+            return new TechniqueMissionController().ExistTechniqueID(techniqueObjectID);
         }
-
-
     }
 }

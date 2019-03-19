@@ -49,18 +49,18 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
             return new ComboxItem() { Text = Name, Tag = objectId };
         }
 
-        public void InvalidateFinishDate()
-        {
-            if (FinishDate != null)
-            {
-                FinishDate = DateTime.Parse(FinishDate.iso).AddYears(1000);
-            }
+        //public void InvalidateFinishDate()
+        //{
+        //    if (FinishDate != null)
+        //    {
+        //        FinishDate = DateTime.Parse(FinishDate.iso).AddYears(1000);
+        //    }
            
-        }
+        //}
 
-        public bool IsInvailDate()
-        {
-            return DateTime.Parse(FinishDate.iso).Year > 2200;
-        }
+        //public bool IsInvailDate()
+        //{
+        //    return DateTime.Parse(FinishDate.iso).Year > 2200;
+        //}
     }
 }

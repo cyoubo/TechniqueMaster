@@ -19,7 +19,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
         public readonly string Interest = "兴趣度";
         public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
-        public readonly string Op_Detail = "详情";
+        public readonly string Op_UpdateState = "状态更新";
         
         protected override void AddDataColumn()
         {
@@ -32,7 +32,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             onCreateDataColumn(Interest);
             onCreateDataColumn(Op_Delete);
             onCreateDataColumn(Op_Edit);
-            onCreateDataColumn(Op_Detail);
+            onCreateDataColumn(Op_UpdateState);
         }
     }
 
@@ -52,7 +52,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             onCreateDataColumn(Interest);
             onCreateDataColumn(Op_Delete);
             onCreateDataColumn(Op_Edit);
-            onCreateDataColumn(Op_Detail);
+            onCreateDataColumn(Op_UpdateState);
         }
     }
 
@@ -66,11 +66,11 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             tempRow[targetBuilder.CatalogID] = t.CatalogID.ToString();
             tempRow[targetBuilder.Description] = t.Description;
             tempRow[targetBuilder.Status] = t.Status;
-            tempRow[targetBuilder.CreateDate] = DateTime.Parse(t.CreateDate.iso).ToString("yyyy-MM-dd");
+            tempRow[targetBuilder.CreateDate] = TechniqueController.FormatBmobDate(t.CreateDate);
             tempRow[targetBuilder.Interest] = t.Interest.ToString();
             tempRow[targetBuilder.Op_Delete] = targetBuilder.Op_Delete;
             tempRow[targetBuilder.Op_Edit] = targetBuilder.Op_Edit;
-            tempRow[targetBuilder.Op_Detail] = targetBuilder.Op_Detail;
+            tempRow[targetBuilder.Op_UpdateState] = targetBuilder.Op_UpdateState;
         }
     }
 

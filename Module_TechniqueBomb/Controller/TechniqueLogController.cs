@@ -53,5 +53,19 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             query.WhereLessThanOrEqualTo("Date", ed);
             return FindByQuery(query);
         }
+
+        public bool ExsitLogID(string missionID)
+        {
+            BmobQuery query = new BmobQuery();
+            query.WhereEqualTo("MissionID", missionID);
+            return FindByQuery(query, 2).Count != 0;
+        }
+
+        internal IList<TB_TechniqueLog> FindByMissionID(string missionID)
+        {
+            BmobQuery query = new BmobQuery();
+            query.WhereEqualTo("MissionID", missionID);
+            return FindByQuery(query);
+        }
     }
 }

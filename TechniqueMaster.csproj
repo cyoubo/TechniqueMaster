@@ -148,6 +148,12 @@
     <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueMissionStateUpdate.Designer.cs">
       <DependentUpon>Frm_TechniqueMissionStateUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueStateUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueStateUpdate.Designer.cs">
+      <DependentUpon>Frm_TechniqueStateUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     </Compile>
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogEdit.Designer.cs">
       <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogManage.Designer.cs">
+      <DependentUpon>UC_TechniqueLogManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.cs">
       <SubType>UserControl</SubType>
@@ -275,6 +287,9 @@
     <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueMissionStateUpdate.resx">
       <DependentUpon>Frm_TechniqueMissionStateUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueStateUpdate.resx">
+      <DependentUpon>Frm_TechniqueStateUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.resx">
       <DependentUpon>UC_TechniqueCategoryEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogEdit.resx">
       <DependentUpon>UC_TechniqueLogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueLogManage.resx">
+      <DependentUpon>UC_TechniqueLogManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.resx">
       <DependentUpon>UC_TechniqueMissionEdit.cs</DependentUpon>

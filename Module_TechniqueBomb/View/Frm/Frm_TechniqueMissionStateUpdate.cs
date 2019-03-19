@@ -36,16 +36,16 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
         {
             radioHelper = new RadioGroupHelper(this.radioGroup1);
             radioHelper.FillRadioButtonByArray(TechniqueMissionController.StatesArrays());
-            radioHelper.Radiogroup.SelectedIndex = controller.Entry.IsInvailDate() ? 0 : 1;
+            radioHelper.Radiogroup.SelectedIndex = TechniqueMissionController.IsInvailDate(controller.Entry.FinishDate) ? 0 : 1;
 
             tv_Name.Text = controller.Entry.Name;
-            dateE_Finish.DateTime = controller.Entry.IsInvailDate() ? DateTime.Now.Date : DateTime.Parse(controller.Entry.FinishDate.iso).Date;
+            dateE_Finish.DateTime = TechniqueMissionController.IsInvailDate(controller.Entry.FinishDate) ? DateTime.Now.Date : DateTime.Parse(controller.Entry.FinishDate.iso).Date;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if (radioHelper.Radiogroup.SelectedIndex == 0)
-                controller.Entry.InvalidateFinishDate();
+                controller.Entry.FinishDate = TechniqueMissionController.InvailDate;
             else
                 controller.Entry.FinishDate = dateE_Finish.DateTime.Date;
 

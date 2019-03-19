@@ -155,9 +155,39 @@ namespace TechniqueMaster.Module_TechniqueBomb.BombCloud
             return result;
         }
 
-        public string FormatBmobDate(BmobDate date)
+        public static string FormatBmobDate(BmobDate date)
         {
             return DateTime.Parse(date.iso).ToString("yyyy-MM-dd"); 
+        }
+
+        public static string FormatBombDateTime(BmobDate date)
+        {
+            return DateTime.Parse(date.iso).ToString("yyyy-MM-dd hh:mm:ss"); 
+        }
+
+
+        private static BmobDate invailDate;
+        public static  BmobDate InvailDate
+        {
+            get 
+            {
+                if(invailDate == null)
+                {
+                    invailDate = new DateTime(2200,1,1);
+                }
+                return invailDate;
+            }
+        }
+        public static bool IsInvailDate(BmobDate date)
+        {
+            if (date == null)
+                return true;
+            else
+            {
+                DateTime now = DateTime.Parse(date.iso);
+                DateTime rule = DateTime.Parse(InvailDate.iso);
+                return now.CompareTo(rule) >= 0;
+            }
         }
     }
 }

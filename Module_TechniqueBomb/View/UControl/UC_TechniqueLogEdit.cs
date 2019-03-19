@@ -79,6 +79,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
                 appoint.SetId(item.objectId);
                 this.schedulerStorage1.Appointments.Add(appoint);
             }
+            this.schedulerControl1.Start = dateE_Start.DateTime;
         }
 
 

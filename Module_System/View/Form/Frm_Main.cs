@@ -19,6 +19,7 @@ namespace TechniqueMaster
     public partial class Frm_Main : Form, IInitialUI
     {
         private TabControlHelper tabhelper;
+        
         public Frm_Main()
         {
             InitializeComponent();
@@ -115,6 +116,12 @@ namespace TechniqueMaster
         {
             UC_TechniqueMissionEdit uc = new UC_TechniqueMissionEdit();
             tabhelper.AddorShowTabPage(barBtn_UC_TechniqueMissionEdit.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueLogManage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueLogManage uc = new UC_TechniqueLogManage();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueLogManage.Caption, uc);
         }
     }
 }

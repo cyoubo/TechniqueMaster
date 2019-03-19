@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechniqueMaster.Module_TechniqueBomb.Controller;
 using TechniqueMaster.Module_TechniqueBomb.Model;
 
 namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
@@ -13,6 +14,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 	public class TB_TechniqueLogBuilder : BaseDataTableBuilder
 	{
 
+        public readonly string ID = "objectId";
 		public readonly string MissionID = "MissionID";
 		public readonly string Date = "Date";
 		public readonly string Context = "Context";
@@ -20,7 +22,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 		public readonly string Op_Delete = "删除";
 		protected override void AddDataColumn()
 		{
-
+            onCreateDataColumn(ID);
 			onCreateDataColumn(MissionID);
 			onCreateDataColumn(Date);
 			onCreateDataColumn(Context);
@@ -38,10 +40,11 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 
 			TB_TechniqueLogBuilder targetBuilder = builder as TB_TechniqueLogBuilder;
 			tempRow[targetBuilder.MissionID] = t.MissionID;
-			tempRow[targetBuilder.Date] = t.Date.ToString();
+			tempRow[targetBuilder.Date] = TechniqueLogController.FormatBmobDate(t.Date);
 			tempRow[targetBuilder.Context] = t.Context;
 			tempRow[targetBuilder.LogUrl] = t.LogUrl;
 			tempRow[targetBuilder.Op_Delete] = targetBuilder.Op_Delete;
+            tempRow[targetBuilder.ID] = t.objectId;
 		}
 
         public override TB_TechniqueLog onDesrialize(BaseDataTableBuilder builder, System.Data.DataRow row)
@@ -53,6 +56,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             tempBean.Date = DateTime.Parse(row[targetBuilder.Date].ToString());
 			tempBean.Context = row[targetBuilder.Context].ToString();
 			tempBean.LogUrl = row[targetBuilder.LogUrl].ToString();
+            tempBean.objectId = row[targetBuilder.ID].ToString();
 			return tempBean;
 		}
 
@@ -70,6 +74,8 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             result.LogUrl = row[targetBuilder.LogUrl].ToString();
             result.MissionID = row[targetBuilder.MissionID].ToString();
             result.Date = LogDate;
+            if(string.IsNullOrEmpty(row[targetBuilder.ID].ToString())   ==false)
+                result.objectId = row[targetBuilder.ID].ToString();
             return result;
         }
     }

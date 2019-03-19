@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
             this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
@@ -40,9 +40,9 @@
             this.dateE_Start = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
@@ -53,9 +53,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateE_Start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -85,16 +85,16 @@
             this.schedulerControl1.Text = "schedulerControl1";
             this.schedulerControl1.Views.DayView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.DayView.Enabled = false;
-            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler4);
+            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl1.Views.FullWeekView.AllDayAreaScrollBarVisible = false;
-            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler5);
+            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.Views.GanttView.Enabled = false;
             this.schedulerControl1.Views.TimelineView.Enabled = false;
             this.schedulerControl1.Views.TimelineView.TimelineScrollBarVisible = false;
             this.schedulerControl1.Views.WeekView.Enabled = false;
             this.schedulerControl1.Views.WorkWeekView.AllDayAreaScrollBarVisible = false;
             this.schedulerControl1.Views.WorkWeekView.Enabled = false;
-            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
+            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
             // 
             // schedulerStorage1
@@ -108,32 +108,32 @@
             this.btn_Refresh.Size = new System.Drawing.Size(74, 32);
             this.btn_Refresh.StyleController = this.layoutControl1;
             this.btn_Refresh.TabIndex = 6;
-            this.btn_Refresh.Text = "simpleButton1";
+            this.btn_Refresh.Text = "查询";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // dateE_End
             // 
             this.dateE_End.EditValue = null;
-            this.dateE_End.Location = new System.Drawing.Point(716, 18);
+            this.dateE_End.Location = new System.Drawing.Point(685, 18);
             this.dateE_End.Name = "dateE_End";
             this.dateE_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateE_End.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateE_End.Size = new System.Drawing.Size(449, 28);
+            this.dateE_End.Size = new System.Drawing.Size(480, 28);
             this.dateE_End.StyleController = this.layoutControl1;
             this.dateE_End.TabIndex = 5;
             // 
             // dateE_Start
             // 
             this.dateE_Start.EditValue = null;
-            this.dateE_Start.Location = new System.Drawing.Point(175, 18);
+            this.dateE_Start.Location = new System.Drawing.Point(95, 18);
             this.dateE_Start.Name = "dateE_Start";
             this.dateE_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateE_Start.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateE_Start.Size = new System.Drawing.Size(378, 28);
+            this.dateE_Start.Size = new System.Drawing.Size(507, 28);
             this.dateE_Start.StyleController = this.layoutControl1;
             this.dateE_Start.TabIndex = 4;
             // 
@@ -157,16 +157,27 @@
             this.layoutControlItem1.Control = this.dateE_Start;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(541, 38);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem1.Size = new System.Drawing.Size(590, 38);
+            this.layoutControlItem1.Text = "起始日期";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 22);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.schedulerControl1;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 38);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1233, 718);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dateE_End;
-            this.layoutControlItem2.Location = new System.Drawing.Point(541, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(590, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(612, 38);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(152, 22);
+            this.layoutControlItem2.Size = new System.Drawing.Size(563, 38);
+            this.layoutControlItem2.Text = "结束日期";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 22);
             // 
             // layoutControlItem3
             // 
@@ -182,21 +193,12 @@
             this.layoutControlItem3.TextVisible = false;
             this.layoutControlItem3.TrimClientAreaToControl = false;
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.schedulerControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 38);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1233, 718);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // UC_TechniqueLog
+            // UC_TechniqueLogEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
-            this.Name = "UC_TechniqueLog";
+            this.Name = "UC_TechniqueLogEdit";
             this.Size = new System.Drawing.Size(1263, 786);
             this.Load += new System.EventHandler(this.UC_TechniqueLog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -209,9 +211,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateE_Start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

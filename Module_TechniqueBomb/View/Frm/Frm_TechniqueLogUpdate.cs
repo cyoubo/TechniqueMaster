@@ -43,13 +43,14 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
         {
             tv_Context.Text = controller.Entry.Context;
             tv_Url.Text = controller.Entry.LogUrl;
-            tv_date.Text = controller.FormatBmobDate(controller.Entry.Date);
+            tv_date.Text = TechniqueLogController.FormatBmobDate(controller.Entry.Date);
 
             TB_TechniqueMissionAdapter missionAdapter = new TB_TechniqueMissionAdapter();
             TB_TechniqueMissionBuilder missionBuilder = new TB_TechniqueMissionBuilder();
             missionAdapter.Initial(missionBuilder);
             missionAdapter.NotifyfreshDataTable(new TechniqueMissionController().FindUnFinishMission());
             sle_Mission.Properties.DataSource = missionAdapter.ResultTable;
+            //若没有设置列名绑定，则此处需要手工通知数据源重绑定，否则sle_Mission.Properties.View.Columns中将不会有值
             sle_Mission.Properties.PopulateViewColumns();
             sle_Mission.Properties.DisplayMember = missionBuilder.Name;
             sle_Mission.Properties.ValueMember = missionBuilder.ObjectID;
@@ -57,7 +58,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
                 sle_Mission.Properties.View.Columns[index].Visible = false;
             sle_Mission.Properties.View.Columns[missionBuilder.Name].Visible = true;
             sle_Mission.Properties.View.Columns[missionBuilder.TechinqueName].Visible = true;
-            //选择默认值
+            //选择默认值,使用valueMember列中的值，而不是直接设置Text值
             sle_Mission.EditValue = controller.Entry.MissionID;
         }
 
@@ -84,7 +85,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (MessageBoxHelper.ShowDeleteInfoDialog() == DialogResult.OK)
+            if (MessageBoxHelper.ShowDeleteInfoDialog() == DialogResult.Yes)
             {
                 if (controller.DeleteByObjectID(LogObject.ToString()))
                 {

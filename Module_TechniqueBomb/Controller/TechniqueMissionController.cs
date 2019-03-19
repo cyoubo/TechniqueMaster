@@ -29,10 +29,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             return "TB_TechniqueMission";
         }
 
-        public bool ExistSubLog(string currentID)
-        {
-            return false;
-        }
+
 
         public IList<TB_TechniqueMission> FindUnFinishMission()
         {
@@ -42,7 +39,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
                 BmobQuery query = new BmobQuery();
                 BmobQuery query2 = new BmobQuery();
                 query2.WhereEqualTo("FinishDate", null);
-                query.WhereLessThan("FinishDate",new DateTime(2200,1,1)).Or(query2);
+                query.WhereLessThan("FinishDate", InvailDate).Or(query2);
                 query.Limit(1000);
                 var result = Bomb().FindTaskAsync<TB_TechniqueMission>(GetTableName(), query);
                 data = new List<TB_TechniqueMission>(result.Result.results);
@@ -56,6 +53,25 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
                 ErrorMessage = ex2.Message;
             }
             return data;
+        }
+
+        public IList<TB_TechniqueMission> FindMissionByTechniqueID(string TechniqueID)
+        {
+            BmobQuery query = new BmobQuery();
+            query.WhereEqualTo("TechniqueID", TechniqueID);
+            return FindByQuery(query, 2);
+        }
+
+        public bool ExistTechniqueID(string techniqueObjectID)
+        {
+            BmobQuery query = new BmobQuery();
+            query.WhereEqualTo("TechniqueID", techniqueObjectID);
+            return FindByQuery(query, 2).Count != 0;
+        }
+
+        public bool ExistSubLog(string currentID)
+        {
+            return new TechniqueLogController().ExsitLogID(currentID);
         }
     }
 }

@@ -61,25 +61,69 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			tempRow[targetBuilder.TechniqueID] = t.TechniqueID;
 			tempRow[targetBuilder.Name] = t.Name;
 			tempRow[targetBuilder.Description] = t.Description;
-			tempRow[targetBuilder.CreateDate] = DateTime.Parse(t.CreateDate.iso).ToString("yyyy-MM-dd");
-            if(t.IsInvailDate() == false)
-			    tempRow[targetBuilder.FinishDate] =  DateTime.Parse(t.FinishDate.iso).ToString("yyyy-MM-dd");
+            tempRow[targetBuilder.CreateDate] = TechniqueMissionController.FormatBmobDate(t.CreateDate);
+            if (TechniqueMissionController.IsInvailDate(t.FinishDate) == false)
+                tempRow[targetBuilder.FinishDate] = TechniqueMissionController.FormatBmobDate(t.FinishDate);
 			tempRow[targetBuilder.Op_Delete] = targetBuilder.Op_Delete;
 			tempRow[targetBuilder.Op_Edit] = targetBuilder.Op_Edit;
 			tempRow[targetBuilder.Op_UpdateState] = targetBuilder.Op_UpdateState;
             tempRow[targetBuilder.TechinqueName] = m_TempParams[t.TechniqueID];
 		}
+    }
 
-        public string ConvertMissionIDToName(string targetID)
+    public class TB_TechniqueMissionStateBuilder : BaseDataTableBuilder
+    {
+
+        public readonly string ObjectID = "ObjectID";
+        public readonly string TechniqueID = "技能编号";
+        public readonly string Name = "任务名称";
+        public readonly string Description = "任务描述";
+        public readonly string CreateDate = "创建日期";
+        public readonly string FinishDate = "完成日期";
+        public readonly string Cal_IsFinish = "是否完成";
+
+        protected override void AddDataColumn()
         {
-            TB_TechniqueMissionBuilder targetBuilder = this.m_TableBuilder as TB_TechniqueMissionBuilder;
-            for (int index = 0; index < this.m_ResultTable.Rows.Count; index++)
+
+            onCreateDataColumn(ObjectID);
+            onCreateDataColumn(TechniqueID);
+            onCreateDataColumn(Name);
+            onCreateDataColumn(Description);
+            onCreateDataColumn(CreateDate);
+            onCreateDataColumn(FinishDate);
+            onCreateDataColumn(Cal_IsFinish);
+        }
+
+    }
+
+    public class TB_TechniqueMissionStateAdapter : ScanGridControlAdapter<TB_TechniqueMission>
+    {
+        public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_TechniqueMission t)
+        {
+            TB_TechniqueMissionStateBuilder targetBuilder = builder as TB_TechniqueMissionStateBuilder;
+            tempRow[targetBuilder.ObjectID] = t.objectId;
+            tempRow[targetBuilder.TechniqueID] = t.TechniqueID;
+            tempRow[targetBuilder.Name] = t.Name;
+            tempRow[targetBuilder.Description] = t.Description;
+            tempRow[targetBuilder.CreateDate] = TechniqueMissionController.FormatBmobDate(t.CreateDate);
+            if (TechniqueMissionController.IsInvailDate(t.FinishDate) == false)
             {
-                DataRow tempRow = this.m_ResultTable.Rows[index];
-                if (tempRow[targetBuilder.ObjectID].ToString().Equals(targetID))
-                    return tempRow[targetBuilder.Name].ToString();
+                tempRow[targetBuilder.FinishDate] = TechniqueMissionController.FormatBmobDate(t.FinishDate);
+                tempRow[targetBuilder.Cal_IsFinish] = TechniqueMissionController.Finish;
             }
-            return "NoData";
+            else
+                tempRow[targetBuilder.Cal_IsFinish] = TechniqueMissionController.Running;
+        }
+
+        public bool IsAllMissionFinish()
+        {
+            TB_TechniqueMissionStateBuilder targetBuilder = this.m_TableBuilder as TB_TechniqueMissionStateBuilder;
+            for (int index = 0; index < m_ResultTable.Rows.Count; index++)
+            {
+                if (m_ResultTable.Rows[index][targetBuilder.Cal_IsFinish].ToString().Equals(TechniqueMissionController.Running))
+                    return false;
+            }
+            return true;
         }
     }
 
