@@ -124,5 +124,11 @@ namespace TechniqueMaster
             UC_TechniqueLogManage uc = new UC_TechniqueLogManage();
             tabhelper.AddorShowTabPage(barBtn_UC_TechniqueLogManage.Caption, uc);
         }
+
+        private void barBtn_UC_ProblemSetsEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_ProblemSetsEdit uc = new UC_ProblemSetsEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_ProblemSetsEdit.Caption, uc);
+        }
     }
 }

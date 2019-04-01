@@ -50,6 +50,8 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_Control = new DevExpress.XtraTab.XtraTabControl();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barBtn_UC_ProblemSetsEdit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab_Control)).BeginInit();
             this.SuspendLayout();
@@ -71,10 +73,11 @@
             this.barBtn_UC_TechniqueCategoryEdit,
             this.barBtn_UC_TechniqueEdit,
             this.barBtn_UC_TechniqueMissionEdit,
-            this.barBtn_UC_TechniqueLogManage});
+            this.barBtn_UC_TechniqueLogManage,
+            this.barBtn_UC_ProblemSetsEdit});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2,
@@ -205,7 +208,8 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "技能管理Bomb版";
             // 
@@ -261,6 +265,22 @@
             this.tab_Control.Size = new System.Drawing.Size(1143, 415);
             this.tab_Control.TabIndex = 1;
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barBtn_UC_ProblemSetsEdit);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "网络笔记";
+            // 
+            // barBtn_UC_ProblemSetsEdit
+            // 
+            this.barBtn_UC_ProblemSetsEdit.Caption = "问题集锦";
+            this.barBtn_UC_ProblemSetsEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_ProblemSetsEdit.Glyph")));
+            this.barBtn_UC_ProblemSetsEdit.Id = 14;
+            this.barBtn_UC_ProblemSetsEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtn_UC_ProblemSetsEdit.LargeGlyph")));
+            this.barBtn_UC_ProblemSetsEdit.Name = "barBtn_UC_ProblemSetsEdit";
+            this.barBtn_UC_ProblemSetsEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtn_UC_ProblemSetsEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtn_UC_ProblemSetsEdit_ItemClick);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -305,6 +325,8 @@
         private DevExpress.XtraBars.BarButtonItem barBtn_UC_TechniqueEdit;
         private DevExpress.XtraBars.BarButtonItem barBtn_UC_TechniqueMissionEdit;
         private DevExpress.XtraBars.BarButtonItem barBtn_UC_TechniqueLogManage;
+        private DevExpress.XtraBars.BarButtonItem barBtn_UC_ProblemSetsEdit;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }
 

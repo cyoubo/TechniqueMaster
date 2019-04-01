@@ -122,10 +122,13 @@
     <Compile Include="Module_TechniqueBomb\Component\Enum\TechniqueStatusEnum.cs" />
     <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueMissionAdapter.cs" />
     <Compile Include="Module_TechniqueBomb\Component\TB_TechniqueLogAdapter.cs" />
+    <Compile Include="Module_TechniqueBomb\Controller\ProblemSetsController.cs" />
     <Compile Include="Module_TechniqueBomb\Controller\TechniqueCategoryController.cs" />
     <Compile Include="Module_TechniqueBomb\Controller\TechniqueController.cs" />
     <Compile Include="Module_TechniqueBomb\Controller\TechniqueLogController.cs" />
     <Compile Include="Module_TechniqueBomb\Controller\TechniqueMissionController.cs" />
+    <Compile Include="Module_TechniqueBomb\Model\TB_ProblemSets.cs" />
+    <Compile Include="Module_TechniqueBomb\Component\TB_ProblemSetsAdapter.cs" />
     <Compile Include="Module_TechniqueBomb\Model\TB_Technique.cs" />
     <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueCategory.cs" />
     <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueLog.cs" />
@@ -153,6 +156,12 @@
     </Compile>
     <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueStateUpdate.Designer.cs">
       <DependentUpon>Frm_TechniqueStateUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_ProblemSetsEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_ProblemSetsEdit.Designer.cs">
+      <DependentUpon>UC_ProblemSetsEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +299,9 @@
     <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueStateUpdate.resx">
       <DependentUpon>Frm_TechniqueStateUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_ProblemSetsEdit.resx">
+      <DependentUpon>UC_ProblemSetsEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueCategoryEdit.resx">
       <DependentUpon>UC_TechniqueCategoryEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,7 +347,6 @@
     <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
