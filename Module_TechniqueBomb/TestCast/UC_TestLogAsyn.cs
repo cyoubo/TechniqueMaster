@@ -37,10 +37,15 @@ namespace TechniqueMaster.Module_TechniqueBomb.TestCast
 
 
             adapter.Initial(builder);
+            onIntial();
+        }
+
+        private void onIntial()
+        {
 
             TechniqueLogController controller = new TechniqueLogController();
 
-            controller.TravelAsyn((repo, ex) => 
+            controller.TravelAsyn((repo, ex) =>
             {
                 if (ex != null)
                 {
@@ -49,6 +54,11 @@ namespace TechniqueMaster.Module_TechniqueBomb.TestCast
                 adapter.NotifyfreshDataTable(repo.results);
                 gridhelper.UpdateTableSourceAsyn(adapter.ResultTable);
             });
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            onIntial();
         }
     }
 }

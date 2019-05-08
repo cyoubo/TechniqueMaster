@@ -19,6 +19,8 @@ namespace TechniqueMaster
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
+            //抑制DevExpress的跨线程修改错误
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
