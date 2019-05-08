@@ -1,4 +1,6 @@
-﻿using cn.bmob.io;
+﻿using cn.bmob.exception;
+using cn.bmob.http;
+using cn.bmob.io;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,12 +63,75 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             return FindByQuery(query, 2).Count != 0;
         }
 
-        internal IList<TB_TechniqueLog> FindByMissionID(string missionID, bool SortDatedesc = true)
+        public IList<TB_TechniqueLog> FindByMissionID(string missionID, bool SortDatedesc = true)
         {
             BmobQuery query = new BmobQuery();
             query.WhereEqualTo("MissionID", missionID);
             query.OrderByDescending("Date");
             return FindByQuery(query);
+        }
+
+        public void FindByMissionIDAsyn(string missionID, BmobCallback<cn.bmob.response.QueryCallbackData<TB_TechniqueLog>> callback)
+        {
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            query.WhereEqualTo("MissionID", missionID);
+            BmobIntance.Create().Bmob.Find<TB_TechniqueLog>("TB_TechniqueLog", query, callback);
+        }
+
+        public void TravelAsyn(BmobCallback<cn.bmob.response.QueryCallbackData<TB_TechniqueLog>> callback)
+        {
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            BmobIntance.Create().Bmob.Find<TB_TechniqueLog>("TB_TechniqueLog", query, callback);
+        }
+
+        public bool AddReviewCount(string logID,ref int reviewCount)
+        {
+            bool result = false;
+            try
+            {
+                reviewCount = reviewCount + 1;
+                TB_TechniqueLog temp = new TB_TechniqueLog();
+                temp.ReViewCount = reviewCount;
+                temp.objectId = logID;
+                var task = Bomb().UpdateTaskAsync(temp);
+                result = string.IsNullOrEmpty(task.Result.updatedAt) == false;
+            }
+            catch (AggregateException ex)
+            {
+                ErrorMessage = ex.InnerException.Message;
+            }
+            catch (Exception ex2)
+            {
+                ErrorMessage = ex2.Message;
+            }
+            return result;
+        }
+
+        public bool ReduceReviewCount(string logID, ref int reviewCount)
+        {
+            bool result = false;
+            try
+            {
+                reviewCount = reviewCount - 1;
+                if (reviewCount < 0)
+                    reviewCount = 0;
+                TB_TechniqueLog temp = new TB_TechniqueLog();
+                temp.ReViewCount = reviewCount;
+                temp.objectId = logID;
+                var task = Bomb().UpdateTaskAsync(temp);
+                result = string.IsNullOrEmpty(task.Result.updatedAt) == false;
+            }
+            catch (AggregateException ex)
+            {
+                ErrorMessage = ex.InnerException.Message;
+            }
+            catch (Exception ex2)
+            {
+                ErrorMessage = ex2.Message;
+            }
+            return result;
         }
     }
 }

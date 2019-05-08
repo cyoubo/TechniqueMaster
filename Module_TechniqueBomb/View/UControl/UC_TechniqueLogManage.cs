@@ -15,6 +15,7 @@ using TechniqueMaster.Module_TechniqueBomb.Componet.Adapter;
 using PS.Plot.FrameBasic.Module_SupportLibs.DevExpressionTools;
 using DevExpress.XtraGrid.Views.BandedGrid;
 using PS.Plot.FrameBasic.Module_System.DevExpressionTools;
+using TechniqueMaster.Module_TechniqueBomb.View.Frm;
 
 namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 {
@@ -62,12 +63,14 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             BandedGridColumn col_Context = new BandedGridColumn { FieldName = builder_Log.Context, Visible = true };
             BandedGridColumn col_Url = new BandedGridColumn { FieldName = builder_Log.LogUrl, Visible = true };
             BandedGridColumn col_OpDelete = new BandedGridColumn { FieldName = builder_Log.Op_Delete, Visible = true };
+            BandedGridColumn col_OpEdit = new BandedGridColumn { FieldName = builder_Log.Op_Edit, Visible = true };
             BandedGridColumn col_ID = new BandedGridColumn { FieldName = builder_Log.ID, Visible = false };
             
             UpdateColumnOption(col_Date, band_Date, false, true, 0);
             UpdateColumnOption(col_Context, band_Info, false, false, 0);
             UpdateColumnOption(col_Url, band_Info, false, false, 1);
             UpdateColumnOption(col_OpDelete, band_Op, false, true, 0);
+            UpdateColumnOption(col_OpEdit, band_Op, false, true, 1);
             UpdateColumnOption(col_ID, band_ID, false, true, 0);
 
             advBandedGridView1.OptionsView.ColumnAutoWidth = true;
@@ -82,6 +85,10 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
             this.advBandedGridView1.Columns[builder_Log.LogUrl].ColumnEdit = repo_HLE_gotoURL;
             this.advBandedGridView1.Columns[builder_Log.LogUrl].OptionsColumn.AllowEdit = true;
+
+            this.advBandedGridView1.Columns[builder_Log.Op_Edit].ColumnEdit = repo_HLE_edit;
+            this.advBandedGridView1.Columns[builder_Log.Op_Edit].OptionsColumn.AllowEdit = true;
+
         }
 
         public void onInitialUI()
@@ -147,6 +154,29 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             if (string.IsNullOrEmpty(LogUrl))
                 return;
             System.Diagnostics.Process.Start("chrome.exe", LogUrl);  
+        }
+
+        private void repo_HLE_edit_Click(object sender, EventArgs e)
+        {
+            Frm_TechniqueLogUpdate frm = new Frm_TechniqueLogUpdate();
+            frm.LogObject = advBandedGridView1.GetFocusedRowCellValue(builder_Log.ID).ToString();
+            string MissionID = advBandedGridView1.GetFocusedRowCellValue(builder_Log.MissionID).ToString();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                adapter_Log.NotifyfreshDataTable(new TechniqueLogController().FindByMissionID(MissionID));
+                this.gridControl2.DataSource = adapter_Log.ResultTable;
+            }
+            else
+                MessageBoxHelper.ShowUpdateStateDialog(false);
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+            advBandedGridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            if (toggleSwitch1.IsOn)
+                advBandedGridView1.ActiveFilterString = string.Format("{0} = '{1}'", builder_Log.IsNeedTidy, "True");
+            else
+                advBandedGridView1.ActiveFilterString = "";
         }
     }
 }

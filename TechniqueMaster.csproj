@@ -133,6 +133,12 @@
     <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueCategory.cs" />
     <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueLog.cs" />
     <Compile Include="Module_TechniqueBomb\Model\TB_TechniqueMission.cs" />
+    <Compile Include="Module_TechniqueBomb\TestCast\UC_TestLogAsyn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\TestCast\UC_TestLogAsyn.Designer.cs">
+      <DependentUpon>UC_TestLogAsyn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     </Compile>
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.Designer.cs">
       <DependentUpon>UC_TechniqueMissionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueReviewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
     <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
@@ -276,6 +288,10 @@
     <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.Designer.cs">
       <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module_TodoList\Component\SynchronizationUtils.cs" />
+    <Compile Include="Module_TodoList\Controller\ToDoListManagerController.cs" />
+    <Compile Include="Module_TodoList\Model\TBB_TodoList.cs" />
+    <Compile Include="Module_TodoList\Model\TB_TodoList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
@@ -286,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_System\View\UControl\UC_DBConnectEdit_SQLite.resx">
       <DependentUpon>UC_DBConnectEdit_SQLite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\TestCast\UC_TestLogAsyn.resx">
+      <DependentUpon>UC_TestLogAsyn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\Frm\Frm_TechniqueLogInput.resx">
       <DependentUpon>Frm_TechniqueLogInput.cs</DependentUpon>
@@ -316,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueMissionEdit.resx">
       <DependentUpon>UC_TechniqueMissionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewEdit.resx">
+      <DependentUpon>UC_TechniqueReviewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.resx">
       <DependentUpon>Frm_TechniqueDetialScheduler.cs</DependentUpon>

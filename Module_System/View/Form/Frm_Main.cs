@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechniqueMaster.Module_Technique.View.UControl;
 using TechniqueMaster.Module_TechniqueBomb.BombCloud;
+using TechniqueMaster.Module_TechniqueBomb.TestCast;
 using TechniqueMaster.Module_TechniqueBomb.View.UControl;
 
 namespace TechniqueMaster
@@ -129,6 +130,18 @@ namespace TechniqueMaster
         {
             UC_ProblemSetsEdit uc = new UC_ProblemSetsEdit();
             tabhelper.AddorShowTabPage(barBtn_UC_ProblemSetsEdit.Caption, uc);
+        }
+
+        private void btn_UC_TestLogAsyn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TestLogAsyn uc = new UC_TestLogAsyn();
+            tabhelper.AddorShowTabPage(btn_UC_TestLogAsyn.Caption, uc);
+        }
+
+        private void barBtn_UC_TechniqueReviewEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UC_TechniqueReviewEdit uc = new UC_TechniqueReviewEdit();
+            tabhelper.AddorShowTabPage(barBtn_UC_TechniqueReviewEdit.Caption, uc);
         }
     }
 }

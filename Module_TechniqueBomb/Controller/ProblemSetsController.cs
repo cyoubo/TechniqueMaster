@@ -56,6 +56,5 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             entry.UpdateDate = FormatDateTime(DateTime.Now);
         }
     }
-
 }
 

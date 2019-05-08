@@ -54,10 +54,10 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.Frm
             gridHelper.SetColMaxWidth(builder.Op_Delete, 80);
             gridHelper.SetColunmOption(builder.Date, false, false);
             gridHelper.SetColunmOption(builder.ID, false, false);
+            gridHelper.SetColunmOption(builder.Op_Edit, false, false);
             gridHelper.SetCellResposity(builder.MissionID, repo_search_TechMission);
             gridHelper.SetCellResposity(builder.IsNeedTidy, repo_cke_Tidy);
             
-
             controller = new TechniqueLogController();
         }
 

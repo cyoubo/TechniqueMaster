@@ -19,6 +19,8 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
 
         public BmobBoolean IsNeedTidy { get; set; }
 
+        public BmobInt ReViewCount { get; internal set; }
+
         public override void readFields(BmobInput input)
         {
             base.readFields(input);
@@ -28,6 +30,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
             Context = input.getString("Context");
             LogUrl = input.getString("LogUrl");
             IsNeedTidy = input.getBoolean("IsNeedTidy");
+            ReViewCount = input.getInt("ReViewCount");
         }
 
         public override void write(BmobOutput output, bool all)
@@ -39,6 +42,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Model
             output.Put("Context", Context);
             output.Put("LogUrl", LogUrl);
             output.Put("IsNeedTidy", IsNeedTidy);
+            output.Put("ReViewCount", ReViewCount);
         }
     }
 }

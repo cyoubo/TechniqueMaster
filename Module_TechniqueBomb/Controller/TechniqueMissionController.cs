@@ -1,4 +1,5 @@
-﻿using cn.bmob.io;
+﻿using cn.bmob.http;
+using cn.bmob.io;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,13 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
         public bool ExistSubLog(string currentID)
         {
             return new TechniqueLogController().ExsitLogID(currentID);
+        }
+
+        public void TravelAsyn(BmobCallback<cn.bmob.response.QueryCallbackData<TB_TechniqueMission>> callback)
+        {
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            BmobIntance.Create().Bmob.Find<TB_TechniqueMission>("TB_TechniqueMission", query, callback);
         }
     }
 }

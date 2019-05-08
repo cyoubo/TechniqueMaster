@@ -34,6 +34,7 @@
 
 # Debug Path
 \obj
+\bin
 TechniqueMaster.exe.config
 TechniqueMaster.vshost.exe.config
 TechniqueMaster.vshost.exe.manifest

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechniqueMaster.Module_TechniqueBomb.Controller;
 using TechniqueMaster.Module_TechniqueBomb.Model;
+using System.Data;
 
 namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 {
@@ -16,12 +17,14 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 
         public readonly string ID = "objectId";
 		public readonly string MissionID = "任务编号";
-		public readonly string Date = "等级日期";
+		public readonly string Date = "登记日期";
 		public readonly string Context = "日志内容";
 		public readonly string LogUrl = "笔记连接";
 		public readonly string Op_Delete = "删除";
+        public readonly string Op_Edit = "编辑";
         public readonly string IsNeedTidy = "亟待整理";
-		
+        
+
         protected override void AddDataColumn()
 		{
             onCreateDataColumn(ID);
@@ -30,12 +33,30 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			onCreateDataColumn(Context);
 			onCreateDataColumn(LogUrl);
             onCreateDataColumn(IsNeedTidy);
+           
 			onCreateDataColumn(Op_Delete);
-		}
-
+            onCreateDataColumn(Op_Edit);
+        }
 	}
 
-	public class TB_TechniqueLogAdapter : EditGridControlAdapter<TB_TechniqueLog>
+    public class TB_TechniqueLogBuilder2 : TB_TechniqueLogBuilder
+    {
+        public readonly string ReViewCount = "回顾次数";
+        public readonly string Op_ReviewAdd = "确认回顾";
+        public readonly string Op_ReviewReduce = "撤销回顾";
+
+        protected override void AddDataColumn()
+        {
+            base.AddDataColumn();
+            onCreateDataColumn(ReViewCount);
+            onCreateDataColumn(Op_ReviewAdd);
+            onCreateDataColumn(Op_ReviewReduce);
+        }
+    }
+
+
+
+    public class TB_TechniqueLogAdapter : EditGridControlAdapter<TB_TechniqueLog>
 	{
 
         public override void onCreateDataRow(ref System.Data.DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_TechniqueLog t)
@@ -47,6 +68,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			tempRow[targetBuilder.Context] = t.Context;
 			tempRow[targetBuilder.LogUrl] = t.LogUrl;
 			tempRow[targetBuilder.Op_Delete] = targetBuilder.Op_Delete;
+            tempRow[targetBuilder.Op_Edit] = targetBuilder.Op_Edit;
             tempRow[targetBuilder.ID] = t.objectId;
             tempRow[targetBuilder.IsNeedTidy] = t.IsNeedTidy;
 		}
@@ -66,6 +88,18 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 		}
 
 	}
+
+    public class TB_TechniqueLogAdapter2 : TB_TechniqueLogAdapter
+    {
+        public override void onCreateDataRow(ref DataRow tempRow, BaseDataTableBuilder builder, int RowIndex, TB_TechniqueLog t)
+        {
+            base.onCreateDataRow(ref tempRow, builder, RowIndex, t);
+            TB_TechniqueLogBuilder2 targetBuilder = builder as TB_TechniqueLogBuilder2;
+            tempRow[targetBuilder.ReViewCount] = t.ReViewCount;
+            tempRow[targetBuilder.Op_ReviewAdd] = targetBuilder.Op_ReviewAdd;
+            tempRow[targetBuilder.Op_ReviewReduce] = targetBuilder.Op_ReviewReduce;
+        }
+    }
 
     public class TB_TechniqueLogDeserializion : BaseTableDeserializion<TB_TechniqueLog>
     {

@@ -36,7 +36,6 @@ namespace TechniqueMaster.Module_TechniqueBomb.BombCloud
                 }
                 else
                 {
-                    
                     BmobQuery query = new BmobQuery();
                     query.WhereEqualTo("objectId", CurrentObjectID);
                     var task = Bomb().FindTaskAsync<E>(GetTableName(), query);
