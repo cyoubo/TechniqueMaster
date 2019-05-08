@@ -99,6 +99,15 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             tempRow[targetBuilder.Op_ReviewAdd] = targetBuilder.Op_ReviewAdd;
             tempRow[targetBuilder.Op_ReviewReduce] = targetBuilder.Op_ReviewReduce;
         }
+
+        public override void onAfterRowCreated(DataRow tempRow, BaseDataTableBuilder m_TableBuilder, int index)
+        {
+            base.onAfterRowCreated(tempRow, m_TableBuilder, index);
+            TB_TechniqueLogBuilder2 targetBuilder = m_TableBuilder as TB_TechniqueLogBuilder2;
+            object temp = tempRow[targetBuilder.ReViewCount];
+            if (temp == null || string.IsNullOrEmpty(temp.ToString()))
+                tempRow[targetBuilder.ReViewCount] = 0;
+        }
     }
 
     public class TB_TechniqueLogDeserializion : BaseTableDeserializion<TB_TechniqueLog>

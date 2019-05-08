@@ -36,10 +36,11 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.repo_HLE_reviewadd = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repo_HLE_reviewReduce = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.repo_HLE_goto = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -51,10 +52,11 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_reviewadd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_reviewReduce)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_goto)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -130,7 +132,8 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repo_HLE_reviewadd,
-            this.repo_HLE_reviewReduce});
+            this.repo_HLE_reviewReduce,
+            this.repo_HLE_goto});
             this.gridControl1.Size = new System.Drawing.Size(654, 464);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -141,6 +144,18 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // repo_HLE_reviewadd
+            // 
+            this.repo_HLE_reviewadd.AutoHeight = false;
+            this.repo_HLE_reviewadd.Name = "repo_HLE_reviewadd";
+            this.repo_HLE_reviewadd.Click += new System.EventHandler(this.repo_HLE_reviewadd_Click);
+            // 
+            // repo_HLE_reviewReduce
+            // 
+            this.repo_HLE_reviewReduce.AutoHeight = false;
+            this.repo_HLE_reviewReduce.Name = "repo_HLE_reviewReduce";
+            this.repo_HLE_reviewReduce.Click += new System.EventHandler(this.repo_HLE_reviewReduce_Click);
             // 
             // layoutControlGroup2
             // 
@@ -162,17 +177,11 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // repo_HLE_reviewadd
+            // repo_HLE_goto
             // 
-            this.repo_HLE_reviewadd.AutoHeight = false;
-            this.repo_HLE_reviewadd.Name = "repo_HLE_reviewadd";
-            this.repo_HLE_reviewadd.Click += new System.EventHandler(this.repo_HLE_reviewadd_Click);
-            // 
-            // repo_HLE_reviewReduce
-            // 
-            this.repo_HLE_reviewReduce.AutoHeight = false;
-            this.repo_HLE_reviewReduce.Name = "repo_HLE_reviewReduce";
-            this.repo_HLE_reviewReduce.Click += new System.EventHandler(this.repo_HLE_reviewReduce_Click);
+            this.repo_HLE_goto.AutoHeight = false;
+            this.repo_HLE_goto.Name = "repo_HLE_goto";
+            this.repo_HLE_goto.Click += new System.EventHandler(this.repo_HLE_goto_Click);
             // 
             // UC_TechniqueReviewEdit
             // 
@@ -193,10 +202,11 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_reviewadd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_reviewReduce)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repo_HLE_goto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +225,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_reviewadd;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_reviewReduce;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repo_HLE_goto;
     }
 }

@@ -57,6 +57,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
             gridhelper.SetCellResposity(builder.Op_ReviewAdd, repo_HLE_reviewadd);
             gridhelper.SetCellResposity(builder.Op_ReviewReduce, repo_HLE_reviewReduce);
+            gridhelper.SetCellResposity(builder.LogUrl, repo_HLE_goto);
 
             controller = new TechniqueLogController();
         }
@@ -64,6 +65,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
         public void onInitialUI()
         {
             listBox_Mission.Items.Clear();
+            listBox_Mission.ItemHeight = 35;
             TechniqueMissionController controller_mission = new TechniqueMissionController();
             foreach (var item in controller_mission.Travels())
                 listBox_Mission.Items.Add(item.ConvertToComboxItem());
@@ -73,7 +75,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
         private void listBox_Mission_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox_Mission.SelectedIndex > 0)
+            if (listBox_Mission.SelectedIndex >= 0)
             {
                 ComboxItem itemsupport = listBox_Mission.SelectedItem as ComboxItem;
                 adapter.NotifyfreshDataTable(controller.FindByMissionID(itemsupport.Tag));
@@ -107,6 +109,14 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             }
             else
                 MessageBoxHelper.ShowUpdateStateDialog(false);
+        }
+
+        private void repo_HLE_goto_Click(object sender, EventArgs e)
+        {
+            string LogUrl = gridhelper.GridView.GetFocusedRowCellValue(builder.LogUrl).ToString();
+            if (string.IsNullOrEmpty(LogUrl))
+                return;
+            System.Diagnostics.Process.Start("chrome.exe", LogUrl);
         }
     }
 }
