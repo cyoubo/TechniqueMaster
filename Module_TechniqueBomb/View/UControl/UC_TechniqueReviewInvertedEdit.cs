@@ -47,7 +47,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
             this.advBandedGridView1.Bands.AddRange(new GridBand[] { band_ID, band_Date, band_Info, band_Op });
 
 
-            BandedGridColumn col_Date = new BandedGridColumn { FieldName = builder_Log.Date, Visible = true };
+            BandedGridColumn col_Date = new BandedGridColumn { FieldName = builder_Log.UpdateDate, Visible = true };
             BandedGridColumn col_Context = new BandedGridColumn { FieldName = builder_Log.Context, Visible = true };
             BandedGridColumn col_Url = new BandedGridColumn { FieldName = builder_Log.LogUrl, Visible = true };
             BandedGridColumn col_Op_ReviewAdd = new BandedGridColumn { FieldName = builder_Log.Op_ReviewAdd, Visible = true };
@@ -82,7 +82,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.View.UControl
 
         public void onInitialUI()
         {
-            adapter_Log.NotifyfreshDataTable(controller.FindLogInvertedData(int.Parse(tv_count.Text)));
+            adapter_Log.NotifyfreshDataTable(controller.FindLogInvertedUpdateData(int.Parse(tv_count.Text)));
             this.gridControl1.DataSource = adapter_Log.ResultTable;
         }
 

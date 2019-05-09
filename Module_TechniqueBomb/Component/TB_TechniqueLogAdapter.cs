@@ -23,6 +23,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 		public readonly string Op_Delete = "删除";
         public readonly string Op_Edit = "编辑";
         public readonly string IsNeedTidy = "亟待整理";
+
         
 
         protected override void AddDataColumn()
@@ -34,6 +35,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
 			onCreateDataColumn(LogUrl);
             onCreateDataColumn(IsNeedTidy);
            
+           
 			onCreateDataColumn(Op_Delete);
             onCreateDataColumn(Op_Edit);
         }
@@ -44,6 +46,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
         public readonly string ReViewCount = "回顾次数";
         public readonly string Op_ReviewAdd = "确认回顾";
         public readonly string Op_ReviewReduce = "撤销回顾";
+        public readonly string UpdateDate = "更新时间";
 
         protected override void AddDataColumn()
         {
@@ -51,6 +54,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             onCreateDataColumn(ReViewCount);
             onCreateDataColumn(Op_ReviewAdd);
             onCreateDataColumn(Op_ReviewReduce);
+            onCreateDataColumn(UpdateDate);
         }
     }
 
@@ -71,6 +75,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             tempRow[targetBuilder.Op_Edit] = targetBuilder.Op_Edit;
             tempRow[targetBuilder.ID] = t.objectId;
             tempRow[targetBuilder.IsNeedTidy] = t.IsNeedTidy;
+            
 		}
 
         public override TB_TechniqueLog onDesrialize(BaseDataTableBuilder builder, System.Data.DataRow row)
@@ -98,6 +103,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             tempRow[targetBuilder.ReViewCount] = t.ReViewCount;
             tempRow[targetBuilder.Op_ReviewAdd] = targetBuilder.Op_ReviewAdd;
             tempRow[targetBuilder.Op_ReviewReduce] = targetBuilder.Op_ReviewReduce;
+            tempRow[targetBuilder.UpdateDate] = t.updatedAt;
         }
 
         public override void onAfterRowCreated(DataRow tempRow, BaseDataTableBuilder m_TableBuilder, int index)
@@ -107,6 +113,8 @@ namespace TechniqueMaster.Module_TechniqueBomb.Componet.Adapter
             object temp = tempRow[targetBuilder.ReViewCount];
             if (temp == null || string.IsNullOrEmpty(temp.ToString()))
                 tempRow[targetBuilder.ReViewCount] = 0;
+
+            tempRow[targetBuilder.UpdateDate] = DateTime.Parse(tempRow[targetBuilder.UpdateDate].ToString()).Date.ToString("yyyy-MM-dd");
         }
     }
 
