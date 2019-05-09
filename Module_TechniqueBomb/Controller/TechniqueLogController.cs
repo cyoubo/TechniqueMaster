@@ -71,6 +71,13 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             return FindByQuery(query);
         }
 
+        public IList<TB_TechniqueLog> FindLogInvertedData(int limit)
+        {
+            BmobQuery query = new BmobQuery();
+            query.OrderByDescending("Date");
+            return FindByQuery(query, limit);
+        }
+
         public void FindByMissionIDAsyn(string missionID, BmobCallback<cn.bmob.response.QueryCallbackData<TB_TechniqueLog>> callback)
         {
             //创建一个BmobQuery查询对象
@@ -133,5 +140,7 @@ namespace TechniqueMaster.Module_TechniqueBomb.Controller
             }
             return result;
         }
+
+
     }
 }

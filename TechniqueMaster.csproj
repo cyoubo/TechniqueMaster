@@ -205,93 +205,12 @@
     <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewEdit.Designer.cs">
       <DependentUpon>UC_TechniqueReviewEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueCatalogAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueEvaluationAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueLogAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueMissionAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Adapter\TB_TechniqueRegisterAdapter.cs" />
-    <Compile Include="Module_Technique\Componet\Enum\MissionStatusEnum.cs" />
-    <Compile Include="Module_Technique\Componet\Enum\TechniqueEnums.cs" />
-    <Compile Include="Module_Technique\Componet\Enum\TechniqueStatusEnum.cs" />
-    <Compile Include="Module_Technique\Componet\Strategy\MeanStrategy.cs" />
-    <Compile Include="Module_Technique\Componet\Strategy\TechniqueEvalutor.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueCatalogController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueEvaluationController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueLogController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueMisssionController.cs" />
-    <Compile Include="Module_Technique\Controller\TechniqueRegisterController.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueLog.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueMission.cs" />
-    <Compile Include="Module_Technique\Model\TB_Technique.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueCatalog.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueEvaluation.cs" />
-    <Compile Include="Module_Technique\Model\TB_TechniqueRegister.cs" />
-    <Compile Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.Designer.cs">
-      <DependentUpon>Frm_TechniqueDetialScheduler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\Frm\Frm_TechniqueLogEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\Frm\Frm_TechniqueLogEdit.Designer.cs">
-      <DependentUpon>Frm_TechniqueLogEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.cs">
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewInvertedEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.Designer.cs">
-      <DependentUpon>UC_TechniqueEvaluate.cs</DependentUpon>
+    <Compile Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewInvertedEdit.Designer.cs">
+      <DependentUpon>UC_TechniqueReviewInvertedEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.Designer.cs">
-      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogInsert.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogInsert.Designer.cs">
-      <DependentUpon>UC_TechniqueLogInsert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogScan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueLogScan.Designer.cs">
-      <DependentUpon>UC_TechniqueLogScan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueMission.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueMission.Designer.cs">
-      <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegister.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegister.Designer.cs">
-      <DependentUpon>UC_TechniqueRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.Designer.cs">
-      <DependentUpon>UC_TechniqueRegisterEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Module_Technique\View\UControl\UC_TechniqueScan.Designer.cs">
-      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module_TodoList\Component\SynchronizationUtils.cs" />
-    <Compile Include="Module_TodoList\Controller\ToDoListManagerController.cs" />
-    <Compile Include="Module_TodoList\Model\TBB_TodoList.cs" />
-    <Compile Include="Module_TodoList\Model\TB_TodoList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Module_System\View\Form\Frm_DataBaseConnect.resx">
@@ -339,36 +258,10 @@
     <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewEdit.resx">
       <DependentUpon>UC_TechniqueReviewEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\Frm\Frm_TechniqueDetialScheduler.resx">
-      <DependentUpon>Frm_TechniqueDetialScheduler.cs</DependentUpon>
+    <EmbeddedResource Include="Module_TechniqueBomb\View\UControl\UC_TechniqueReviewInvertedEdit.resx">
+      <DependentUpon>UC_TechniqueReviewInvertedEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\Frm\Frm_TechniqueLogEdit.resx">
-      <DependentUpon>Frm_TechniqueLogEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueEvaluate.resx">
-      <DependentUpon>UC_TechniqueEvaluate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueCatalogEdit.resx">
-      <DependentUpon>UC_TechniqueCatalogEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueLogInsert.resx">
-      <DependentUpon>UC_TechniqueLogInsert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueLogScan.resx">
-      <DependentUpon>UC_TechniqueLogScan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueMission.resx">
-      <DependentUpon>UC_TechniqueMission.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueRegister.resx">
-      <DependentUpon>UC_TechniqueRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueRegisterEdit.resx">
-      <DependentUpon>UC_TechniqueRegisterEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module_Technique\View\UControl\UC_TechniqueScan.resx">
-      <DependentUpon>UC_TechniqueScan.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -394,7 +287,6 @@
   <ItemGroup>
     <Folder Include="Module_System\Componet\Adapter\" />
     <Folder Include="Module_System\Controller\" />
-    <Folder Include="Module_Technique\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PS.Plot.FrameBasic\PS.Plot.FrameBasic.csproj">
